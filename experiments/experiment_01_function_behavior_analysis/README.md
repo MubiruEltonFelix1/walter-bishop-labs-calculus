@@ -81,6 +81,59 @@ The console will display the first derivative, second derivative, and critical p
 
 ---
 
+## Limitations
+
+### 1. Single-variable functions only
+The entire architecture — `sp.symbols('x')`, `sp.diff(f(x), x)`, `np.linspace` over a 1D domain — is built around a single independent variable. Multi-variable functions (e.g., f(x, y)) would require a complete redesign of the calculus engine and the visualization layer.
+
+### 2. Fixed domain and axis bounds
+The plot domain `[-2, 4]` and the animation y-axis range `[-10, 10]` are hardcoded in the visualization files. Swapping in a function whose interesting behavior lies outside these bounds — or whose output scale is very different — produces a misleading or empty plot. There is no automatic domain or range detection.
+
+### 3. `sp.solve` fails or misbehaves on non-polynomial functions
+Critical point detection uses `sp.solve(first_derivative, x)`, which works reliably for polynomials. For transcendental functions (e.g., `sin(x)`, `exp(x) * cos(x)`), SymPy either returns an empty list, raises a `NotImplementedError`, or returns a `ConditionSet` representing infinitely many solutions — all of which break the `float(cp)` call in `static_plot.py` with no meaningful error message.
+
+### 4. Non-differentiable functions break the symbolic pipeline
+Derivatives are computed at module-load time in `derivatives.py`. If `f(x)` is non-differentiable (e.g., `floor(x)`, `abs(x)`), SymPy either returns a `DiracDelta` or `Piecewise` expression. These expressions cannot be reliably lambdified into NumPy, and `sp.solve` cannot solve them for critical points in the conventional sense. The `floor(x)` test in this experiment directly exposed this failure mode.
+
+### 5. The dual-context function pattern does not scale
+Functions that work naturally with both NumPy and SymPy (e.g., standard polynomial arithmetic) require no special treatment. But any function involving a non-algebraic operation (floor, abs, conditional logic) requires a manual `isinstance(x, sp.Basic)` branch to route to the correct implementation. This pattern becomes increasingly fragile and verbose for complex functions.
+
+### 6. Module-level derivative computation gives opaque errors on import failure
+Because `first_derivative` and `second_derivative` are computed as module-level expressions in `derivatives.py`, any error in `f(x)` during symbolic evaluation raises an import-time exception. The traceback points to the import chain rather than to the function definition, making it harder to diagnose the root cause.
+
+### 7. No handling for poles and discontinuities in the visualization
+Functions with vertical asymptotes (e.g., `1/x`, `tan(x)`) produce `inf` or `nan` values in the NumPy arrays. Matplotlib renders these as a spurious near-vertical line across the discontinuity. There is no masking, clipping, or detection logic in the current plotting code.
+
+### 8. Complex-valued critical points are not filtered
+`sp.solve` can return complex-valued roots for functions that have no real critical points (e.g., `x² + 1` has derivative `2x`, which is fine, but more exotic functions may yield complex solutions). The `float(cp)` call in `static_plot.py` will raise a `TypeError` on any complex result without a guard.
+
+### 9. No second-derivative classification of critical points
+The critical points are located and plotted, but the code does not programmatically evaluate `f''(x)` at each critical point to label them as local maxima, local minima, or saddle points. This classification is visually implied by the `f''(x)` line but is never stated explicitly in any output.
+
+---
+
+## Key Learnings from Experiment 01
+
+### Symbolic and numerical computation are not interchangeable
+The most important design lesson of this experiment was that SymPy and NumPy operate in fundamentally different paradigms. SymPy manipulates symbolic expression trees; NumPy operates on arrays of floating-point numbers. A function written naively in Python (using `**`, `+`, `-`) happens to work with both because Python operator overloading makes the same syntax dispatch to different implementations. The moment a function requires a non-algebraic operation, that silent compatibility breaks and must be handled explicitly.
+
+### `sp.lambdify` is the bridge between the two worlds
+`sp.lambdify` translates a SymPy expression into a callable NumPy function, which is why the derivative overlays in `static_plot.py` and the tangent slope in `animation_plot.py` can be computed numerically without re-implementing the derivatives in NumPy. Understanding this bridge — and its limits (it cannot handle all SymPy expressions cleanly) — is central to building hybrid symbolic-numerical pipelines.
+
+### Module-level computation is a convenience with a cost
+Computing derivatives at import time in `derivatives.py` makes them available as simple named imports (`from calculus.derivatives import first_derivative`), which simplifies the rest of the codebase. The cost is that errors surface at import time and are harder to trace, and there is no opportunity to pass parameters or swap the function without reloading the module. For a research tool intended to be swapped to different functions regularly, lazy evaluation (computing derivatives inside a function call rather than at module load) would be more robust.
+
+### The second derivative test is best understood visually
+Plotting `f(x)`, `f'(x)`, and `f''(x)` together on a single graph makes the second derivative test immediate and intuitive. The zeros of `f'` align vertically with the critical point markers. At those same x-positions, reading the sign of `f''` directly from the dotted line confirms whether the point is a maximum or minimum — no algebra required. This visual confirmation is more instructive than any printed output.
+
+### Non-smooth functions expose the boundaries of the calculus engine
+Testing `floor(x)` — a function that is piecewise constant and non-differentiable at every integer — revealed exactly which parts of the pipeline assume smoothness. The symbolic differentiator, the critical-point solver, and the tangent-line animator all implicitly assume a smooth, differentiable function. Extending the system to handle non-smooth functions would require either restricting the pipeline steps that are invoked, or replacing the symbolic solver with a numerical approach (e.g., finding sign changes in a numerically sampled derivative array).
+
+### Animation reveals calculus as a process, not just a result
+The animated draw paired with the moving tangent line communicates something that a static plot cannot: derivative is a local, instantaneous property that evolves as you move along the curve. Watching the tangent line flatten near the critical points and steepen in between makes the geometric meaning of the first derivative viscerally clear in a way that a printed symbolic expression does not.
+
+---
+
 ## Results
 
 The symbolic engine correctly computes the first derivative as 3x² − 6x and the second derivative as 6x − 6. The critical point solver returns x = 0 and x = 2. Evaluating the second derivative at these points confirms their nature: at x = 0 the second derivative is negative, confirming a local maximum; at x = 2 the second derivative is positive, confirming a local minimum. The static plot clearly shows this behavior, and the animation reproduces it in a frame-by-frame drawing sequence from left to right.
