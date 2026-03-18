@@ -10,7 +10,7 @@
 
 Experiment 01 establishes the foundational computational framework for the Walter Bishop Labs Calculus Research Series. The objective of this experiment was to construct a fully automated pipeline that takes a single-variable polynomial function, derives its symbolic derivatives, identifies its critical points, and renders both static and animated visualizations of its behavior across a defined domain. Rather than relying on numerical approximation, the experiment was designed from the ground up to operate on exact symbolic mathematics, ensuring precision and reproducibility across all analytical outputs.
 
-The function selected for this experiment is a cubic polynomial: f(x) = x³ − 3x² + 2. This function was chosen deliberately for its rich behavior within a compact domain. It exhibits a local maximum, a local minimum, two real roots, and an inflection point — making it an ideal subject for demonstrating derivative analysis, critical point detection, and graphical interpretation.
+The function selected for this experiment is a cubic polynomial: f(x) = x³ − 3x² + 2. This function was chosen deliberately for its rich behavior within a compact domain. It exhibits a local maximum, a local minimum, two real roots, and an inflection point making it an ideal subject for demonstrating derivative analysis, critical point detection, and graphical interpretation.
 
 ---
 
