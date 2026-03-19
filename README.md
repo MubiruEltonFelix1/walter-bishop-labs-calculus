@@ -25,8 +25,7 @@ I still treat this as a student project, but I want the documentation to be orga
 I wrote this repository for three groups of readers:
 
 1. Students who want a practical bridge between lecture theory and computation.
-2. Lecturers who want to assess conceptual understanding through reproducible experiments.
-3. Experienced readers (including multivariable-calculus learners) who want a clean base that can be extended beyond 1D examples.
+2. Experienced readers (including multivariable-calculus learners) who want a clean base that can be extended beyond 1D examples.
 
 ## Current Scope
 
@@ -35,7 +34,7 @@ Right now I focus on two connected experiments:
 1. Function behavior analysis (single-variable)
 2. Optimization and sensitivity analysis (turning calculus into decisions)
 
-These are student-led lab experiments with a structured methodology, not a polished research framework yet.
+These are student-led lab experiments with a structured methodology.
 
 ## Repository Layout
 
