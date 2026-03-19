@@ -1,6 +1,6 @@
 # Walter Bishop Labs: Calculus Experiments
 
-I built this repository to help me understand calculus the way I wish it was taught in class: not only as formulas to memorize, but as ideas I can test, visualize, and apply.
+I built this repository to help me understand calculus in a way that complements what I learn in class: not only as formulas to memorize, but as ideas I can test, visualize, and apply.
 
 Instead of treating calculus as finished math on paper, I use Python to ask practical questions such as:
 - Where is this function increasing or decreasing?
