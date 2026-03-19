@@ -1,26 +1,41 @@
 # Walter Bishop Labs: Calculus Experiments
 
-Walter Bishop Labs is a computational mathematics repository built to study calculus as an experimental science. Instead of treating formulas as static results, this project treats each concept as a system that can be modeled, differentiated, visualized, tested, and extended in code.
+I built this repository to help me understand calculus the way I wish it was taught in class: not just formulas to memorize, but ideas I can test, visualize, and play with in code.
 
-The lab currently focuses on single-variable and multivariable intuition through symbolic analysis, numerical sampling, and visual interpretation. The long-term direction is a modular experiment suite where each topic can move from theory to implementation to interpretation in a repeatable workflow.
+Instead of treating calculus as "finished math on paper", I use Python to ask practical questions like:
+- Where is this function increasing or decreasing?
+- Why does a turning point happen at this exact x-value?
+- How does changing parameters affect the best decision?
 
-## Research Direction
+## Why I Built This
 
-The project is designed around four principles. The first is conceptual clarity, where every experiment should expose the geometric and physical meaning behind the mathematics. The second is computational rigor, where symbolic tools are used when exactness matters and numerical tools are used when simulation and scale matter. The third is visual intelligence, where plots and animations are used to reveal structure, not only to decorate output. The fourth is extensibility, where each experiment serves as a reusable module for future topics.
+In lectures, abstract concepts like derivatives, curvature, optimization, and sensitivity can feel disconnected. I designed these experiments to close that gap:
+- I start with the math from class
+- I encode it in code
+- I visualize the behavior
+- I interpret the result in plain language
+
+My goal is to make calculus feel intuitive, not mysterious.
 
 ## Current Scope
 
-The present codebase explores core calculus foundations that support later work in optimization, modeling, and differential systems. Topics include continuity behavior, derivatives, partial derivatives, gradient-based reasoning, optimization intuition, and introductory differential equation patterns.
+Right now I focus on two connected experiments:
+
+1. Function behavior analysis (single-variable)
+2. Optimization and sensitivity analysis (turning calculus into decisions)
+
+These are early-stage student lab experiments, not a polished research framework.
 
 ## Repository Layout
 
-The repository is organized as a sequence of experiments under the [experiments](experiments) directory. Each experiment is intended to include a self-contained implementation with a clear entry point, mathematical logic under a calculus module, and one or more visualization modules.
+The project is organized under [experiments](experiments):
 
-The first complete implementation is available in [experiments/experiment_01_function_behavior_analysis](experiments/experiment_01_function_behavior_analysis), where symbolic derivatives, critical points, and both static and animated visualizations are integrated into a single analysis pipeline.
+- [experiments/experiment_01_function_behavior_analysis](experiments/experiment_01_function_behavior_analysis)
+  - I analyze one function deeply using symbolic derivatives and visualizations.
+- [experiments/experiment_02_optimisation_and_sensitivity_analysis](experiments/experiment_02_optimisation_and_sensitivity_analysis)
+  - I extend the same ideas to optimization, constraints, and robustness checks.
 
 ## Quick Start
-
-To run the lab locally, create a Python environment, install dependencies, and execute an experiment entry point.
 
 ```bash
 pip install -r requirements.txt
@@ -28,22 +43,47 @@ cd experiments/experiment_01_function_behavior_analysis
 python main.py
 ```
 
-## Methodology
+## How I Work in Each Experiment
 
-Each experiment follows a consistent lifecycle. A target function or system is first defined as a computational object. The system is then analyzed symbolically to produce mathematically exact derivatives or transforms. Numerical sampling is introduced for plotting and simulation where dense evaluation is required. Finally, outputs are interpreted through visual and textual reporting so that conclusions are not only computed but explained.
+My usual workflow is:
 
-## What Makes This Lab Different
+1. Define a function
+2. Compute derivatives symbolically (with SymPy)
+3. Find candidate points (like critical points)
+4. Sample numerically for plotting
+5. Interpret the results from both math and visuals
 
-Most educational repositories stop at producing the right numeric answer. Walter Bishop Labs is structured to expose why behavior emerges. The aim is to connect symbolic structure with visual behavior and then connect that behavior to modeling decisions. This approach supports students, researchers, and engineers who want calculus to function as an investigative tool rather than a memorization exercise.
+This keeps the project close to classroom calculus while still being practical.
 
-## Near-Term Expansion
+## What Makes This Different (For Me)
 
-Upcoming work will expand Experiment 01 into a broader analysis instrument by adding automatic critical point classification, inflection point detection, tangent-line dynamics, integral area visualization, and approximation modules such as Taylor-series expansion. Future experiments will generalize these ideas to multivariable surfaces, vector fields, and constrained optimization systems.
+Many examples online stop at "here is the correct answer".
+I care more about "why this answer makes sense".
+
+So I always try to connect:
+- symbolic result
+- geometric meaning
+- practical decision
+
+## Near-Term Next Steps
+
+I plan to keep improving these experiments by adding:
+- automatic classification of critical points
+- inflection point detection
+- better tangent-line intuition tools
+- clearer sensitivity visuals
+- more reusable experiment templates
 
 ## Contributing
 
-Contributions are welcome when they improve mathematical clarity, computational correctness, or visual interpretability. Proposed changes should preserve the experiment-first structure and include enough context that the mathematical intent is evident from code and output.
+If you want to contribute, I welcome changes that improve:
+- conceptual clarity
+- correctness of the math/code
+- interpretability of outputs
+
+Please keep the style educational and practical.
 
 ## License
 
-This project currently has no license file defined in the repository root. If public collaboration is planned, adding an explicit open-source license is recommended so usage and contribution terms are unambiguous.
+There is currently no license file in the repository root.
+If this project goes public for broader collaboration, I should add one.
