@@ -123,6 +123,36 @@ If import paths fail, make sure the command is run from this experiment director
 
 ---
 
+## Quick Verification Checks
+
+After running once, I use these checks to confirm the implementation is healthy:
+
+1. Console prints first derivative exactly as $3x^2 - 6x$.
+2. Console prints second derivative exactly as $6x - 6$.
+3. Critical points list contains $x=0$ and $x=2$.
+4. Static plot and animation windows open without import/runtime errors.
+
+---
+
+## Expected Output Snapshot
+
+Minimal console snippet I expect:
+
+```text
+Run seed: 42
+
+First derivative:
+3*x**2 - 6*x
+
+Second derivative:
+6*x - 6
+
+Critical points:
+[0, 2]
+```
+
+---
+
 ## Main Results
 
 For the chosen function:
@@ -185,9 +215,22 @@ I list these limits explicitly to avoid overstating what the current version can
 
 ---
 
+## Troubleshooting
+
+1. `ModuleNotFoundError` for local packages:
+Run from `experiments/experiment_01_function_behavior_analysis` before calling `python main.py`.
+
+2. Plot window does not open in headless/remote environments:
+Switch Matplotlib backend or run on a local desktop session.
+
+3. Unexpected symbolic output formatting:
+SymPy may print equivalent algebra in a different form. Verify mathematical equivalence, not only string formatting.
+
+---
+
 ## Notes
 
 I treat this experiment as the foundation for the rest of the project.
-The structure here (math module + visualization module + single entry script) is the pattern I want to keep as I add more experiments.
+The structure here (math module + visualization module + single entry script) is the pattern I keep while hardening the first two experiments.
 
 Even though the mathematics is introductory, I wrote this as serious training for translating abstract calculus into computational reasoning.

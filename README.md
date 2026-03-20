@@ -36,6 +36,8 @@ Right now I focus on two connected experiments:
 
 These are student-led lab experiments with a structured methodology.
 
+I am intentionally freezing scope at these two experiments for now and improving depth instead of adding new experiments.
+
 ## Repository Layout
 
 The project is organized under [experiments](experiments):
@@ -46,6 +48,13 @@ The project is organized under [experiments](experiments):
   - I extend the same ideas to optimization, constraints, and robustness checks.
 
 Supporting documents at the repository root summarize progression and learning flow across experiments.
+
+Recommended reading sequence:
+- `README.md`
+- `experiment_structure.md`
+- `BRIDGE_EXPERIMENTS_01_TO_02.md`
+- `experiments/experiment_01_function_behavior_analysis/README.md`
+- `experiments/experiment_02_optimisation_and_sensitivity_analysis/README.md`
 
 ## Quick Start
 
@@ -106,14 +115,13 @@ After running these experiments, I expect to be able to:
 
 ## Near-Term Next Steps
 
-I plan to keep improving these experiments by adding:
+I plan to keep improving these two experiments by hardening:
 - automatic classification of critical points
 - inflection point detection
 - better tangent-line intuition tools
 - clearer sensitivity visuals
-- more reusable experiment templates
-
-I also plan to begin a multivariable extension track after the current single-variable pipeline is stable and well-tested.
+- stronger run validation and smoke tests
+- tighter reproducibility and reporting conventions
 
 ## Quality and Limitations
 
@@ -137,5 +145,4 @@ Please keep the style educational, practical, and technically grounded.
 
 ## License
 
-There is currently no license file in the repository root.
-If this project goes public for broader collaboration, I should add one.
+This repository uses the MIT License. See the root `LICENSE` file.
