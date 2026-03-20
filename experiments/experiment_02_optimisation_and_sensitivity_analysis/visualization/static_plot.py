@@ -3,7 +3,8 @@ import matplotlib.pyplot as plt
 from calculus.function import f
 
 
-def plot_function(bounds, recommendation, params=None, domain=(-1.0, 4.0)):
+def plot_function(bounds, recommendation, params=None, domain=(-1.0, 4.0),
+                  save_path=None):
     lo, hi = domain
     xs = np.linspace(lo, hi, 600)
     ys = f(xs, params)
@@ -40,4 +41,6 @@ def plot_function(bounds, recommendation, params=None, domain=(-1.0, 4.0)):
     ax.legend(fontsize=10)
     ax.grid(True, alpha=0.3)
     plt.tight_layout()
+        if save_path is not None:
+                fig.savefig(save_path, dpi=150)
     plt.show()

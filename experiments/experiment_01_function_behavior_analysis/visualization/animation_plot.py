@@ -4,20 +4,21 @@ from matplotlib.animation import FuncAnimation
 import sympy as sp
 from calculus.function import f
 from calculus.derivatives import first_derivative, x as sym_x
+from settings import PLOT_DOMAIN, ANIMATION_POINTS, ANIMATION_INTERVAL_MS
 
 def animate_function():
     plt.style.use('dark_background')
 
     f_prime = sp.lambdify(sym_x, first_derivative, 'numpy')
 
-    x = np.linspace(-2, 4, 200)
+    x = np.linspace(PLOT_DOMAIN[0], PLOT_DOMAIN[1], ANIMATION_POINTS)
     fig, ax = plt.subplots()
     line,    = ax.plot([], [], linewidth=2,   label="f(x)")
     tangent, = ax.plot([], [], linewidth=1.5, label="tangent",
                        linestyle='--', color='tomato')
     dot,     = ax.plot([], [], 'o', color='tomato', markersize=6)
 
-    ax.set_xlim(-2, 4)
+    ax.set_xlim(PLOT_DOMAIN[0], PLOT_DOMAIN[1])
     ax.set_ylim(-10, 10)
     ax.set_title("Animated Calculus Experiment")
     ax.legend(loc='upper left')
@@ -47,6 +48,6 @@ def animate_function():
         fig,
         update,
         frames=len(x),
-        interval=20
+        interval=ANIMATION_INTERVAL_MS
     )
     plt.show()

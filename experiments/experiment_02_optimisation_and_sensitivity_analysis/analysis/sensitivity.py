@@ -1,10 +1,7 @@
 import numpy as np
 from calculus.function import DEFAULT_PARAMS
 from optimization.constrained_optimizer import constrained_optimize
-
-# Perturbation percentages applied to each parameter value.
-# 0.0 is included so the baseline appears inline in the results table.
-PERTURBATION_GRID = [-0.20, -0.10, 0.0, 0.10, 0.20]
+from settings import PERTURBATION_GRID
 
 # Parameters to perturb.  'c' is the constant offset — it has no effect on
 # x* but does shift the objective value, which is itself a useful finding.

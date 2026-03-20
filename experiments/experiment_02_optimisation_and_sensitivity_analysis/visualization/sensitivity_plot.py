@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 
 
-def plot_sensitivity(sensitivity_records, param_names=None):
+def plot_sensitivity(sensitivity_records, param_names=None, save_path=None):
     """
     One subplot per parameter, showing how the recommended x* shifts as the
     parameter is perturbed by various percentages.
@@ -44,4 +44,6 @@ def plot_sensitivity(sensitivity_records, param_names=None):
         fontsize=13, y=1.03,
     )
     plt.tight_layout()
+    if save_path is not None:
+        fig.savefig(save_path, dpi=150)
     plt.show()

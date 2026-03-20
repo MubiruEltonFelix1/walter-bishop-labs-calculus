@@ -4,11 +4,12 @@ import sympy as sp
 from calculus.function import f
 from calculus.derivatives import first_derivative, second_derivative, x as sym_x
 from calculus.analysis import find_critical_points
+from settings import PLOT_DOMAIN, PLOT_POINTS
 
 def plot_function():
     plt.style.use('dark_background')
 
-    x_vals = np.linspace(-2, 4, 400)
+    x_vals = np.linspace(PLOT_DOMAIN[0], PLOT_DOMAIN[1], PLOT_POINTS)
 
     f_prime = sp.lambdify(sym_x, first_derivative, 'numpy')
     f_double_prime = sp.lambdify(sym_x, second_derivative, 'numpy')
