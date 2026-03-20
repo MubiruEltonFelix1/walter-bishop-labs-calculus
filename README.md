@@ -59,17 +59,29 @@ Recommended reading sequence:
 ## Quick Start
 
 ```bash
-pip install -r requirements.txt
-cd experiments/experiment_01_function_behavior_analysis
-python main.py
+python -m pip install -r requirements.txt
+python run_experiments.py --exp 1
 ```
 
 If you want to run Experiment 02:
 
 ```bash
-cd experiments/experiment_02_optimisation_and_sensitivity_analysis
-python main.py
+python run_experiments.py --exp 2
 ```
+
+If you want to run both experiments in sequence:
+
+```bash
+python run_experiments.py --exp both
+```
+
+If you only want non-plot validation checks:
+
+```bash
+python run_experiments.py --validate
+```
+
+These commands are repository-root commands. No absolute paths or manual interpreter path edits are required.
 
 ## How I Work in Each Experiment
 

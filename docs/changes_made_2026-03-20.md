@@ -75,6 +75,7 @@ This document records the implementation pass that hardened the repository while
   - `tests/test_experiment_01_smoke.py`
   - `tests/test_experiment_02_smoke.py`
 - Added `validate_experiments.py` for quick non-plot core validation.
+- Added `run_experiments.py` at repository root so users can run Experiment 01, Experiment 02, both, or validation from one command without manual directory changes.
 
 ## 6. Notes
 
