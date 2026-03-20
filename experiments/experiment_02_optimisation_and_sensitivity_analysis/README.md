@@ -2,7 +2,7 @@
 
 Walter Bishop Labs  
 Date: March 16, 2026  
-Status: Design Complete, Implementation Pending
+Status: Implemented and Running
 
 ---
 
@@ -68,7 +68,7 @@ The tone stays student-first, but the structure is intentionally professional.
 
 ---
 
-## Planned Structure
+## Implemented Structure
 
 ```text
 experiment_02_optimisation_and_sensitivity_analysis/
@@ -96,7 +96,7 @@ Each package has a single responsibility so the pipeline remains understandable 
 
 ---
 
-## Functional Targets
+## Functional Targets (Implemented)
 
 ### 1. Symbolic Candidate Discovery
 - Solve $f'(x)=0$ where possible
@@ -149,7 +149,7 @@ The report should explain not only what the recommended point is, but why it is 
 
 ## Scope Limits (For Now)
 
-- no multivariable optimization yet
+- no multivariable optimisation yet
 - no global stochastic optimizers yet
 - no web/API interface yet
 
@@ -199,11 +199,58 @@ Implementation is done when:
 5. Summary output includes recommendation + robustness
 6. Plots render correctly
 
-If any one of these fails, I consider the experiment incomplete.
+Current status: all six checks above are satisfied in the current implementation.
 
 ---
 
-## My Build Plan
+## How to Run
+
+From this experiment folder:
+
+```bash
+cd experiments/experiment_02_optimisation_and_sensitivity_analysis
+python main.py
+```
+
+The run produces:
+
+1. console recommendation report
+2. objective plot window
+3. sensitivity plot window
+4. output artifacts under `outputs/plots/` and `outputs/reports/`
+
+---
+
+## Quick Verification Checks
+
+After one run, I check:
+
+1. Symbolic candidates include 0 and 2.
+2. Recommended point is near $x^*=2$ for the default bounded minimisation setup.
+3. Both numerical methods report convergence near the same minimum.
+4. Robustness score prints in $[0, 1]$.
+5. `outputs/reports/summary_report.txt` is generated.
+
+---
+
+## Expected Output Snapshot
+
+Typical console pattern:
+
+```text
+=== EXPERIMENT 02 — OPTIMISATION AND SENSITIVITY ANALYSIS ===
+Run seed:    42
+
+First derivative:    f'(x)  = 3*x**2 - 6*x
+Second derivative:   f''(x) = 6*x - 6
+
+... recommendation report ...
+Robustness score:   0.xxxx
+```
+
+---
+
+## Implementation Phases (Completed)
 
 ### Phase 1 - Math Base
 - function and derivative modules
@@ -252,3 +299,16 @@ When this runs, I want the console output to read like a decision story:
 That way, a lecturer can follow both the math and the practical conclusion.
 
 I also want experienced readers to see clear traceability from derivative math to final decision output.
+
+---
+
+## Troubleshooting
+
+1. Import path errors when running `main.py`:
+Run from `experiments/experiment_02_optimisation_and_sensitivity_analysis` so local packages resolve correctly.
+
+2. Plot windows do not render in remote/headless sessions:
+Use a local desktop environment or configure a non-interactive Matplotlib backend.
+
+3. Symbolic solver returns no candidates for a different objective:
+Use the numerical methods as fallback and verify derivative expressions for that objective class.

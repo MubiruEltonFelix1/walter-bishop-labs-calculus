@@ -2,6 +2,8 @@
 
 This document explains how experiments in this repository are designed, what each part of the folder structure does, and what conventions every experiment follows. Read this before contributing, before running a new experiment, or before building one from scratch.
 
+Current repository scope is intentionally frozen to Experiment 01 and Experiment 02. This document is still useful for consistency and maintenance.
+
 ---
 
 ## The Philosophy
@@ -29,11 +31,10 @@ walter-bishop-labs-calculus/
 │
 └── experiments/
     ├── experiment_01_.../       ← First complete experiment
-    ├── experiment_02_.../       ← Second experiment (and so on)
-    └── ...
+    └── experiment_02_.../       ← Second complete experiment
 ```
 
-Experiments are numbered sequentially and named descriptively. The number reflects the order in which concepts build on each other. Later experiments depend on intuition established in earlier ones.
+Experiments are numbered sequentially and named descriptively. The number reflects the order in which concepts build on each other.
 
 ---
 
@@ -154,11 +155,10 @@ Experiments are ordered so that each one builds on the conceptual foundation of 
 ```
 Experiment 01 — establishes what a function is doing (behavior analysis)
 Experiment 02 — establishes what to do with that information (optimization)
-Experiment 03 — generalizes the domain (multivariable, integration)
-...
+No additional experiments are currently planned in this repository branch.
 ```
 
-If an experiment references a concept or uses a module from a previous experiment, this dependency is noted in the README. Contributors should read the understanding documents of dependency experiments before working on a later one.
+Experiment 02 depends directly on foundations built in Experiment 01, and that dependency is documented in project READMEs.
 
 ---
 
@@ -186,18 +186,12 @@ Experiments must be run from inside their own directory. Relative imports in the
 
 ---
 
-## How to Contribute a New Experiment
+## How to Contribute (Current Scope)
 
-1. Create a new directory under `experiments/` following the naming convention: `experiment_NN_descriptive_name/`
-2. Build the structure described above — at minimum `main.py`, `README.md`, `calculus/`, and `visualization/`
-3. Define the experimental function in `calculus/function.py` using the dual-compatible pattern
-4. Implement symbolic analysis in `calculus/derivatives.py` and `calculus/analysis.py`
-5. Implement a static plot and, where meaningful, an animated plot in `visualization/`
-6. Write `main.py` to orchestrate all modules in sequence
-7. Write `README.md` to record what was implemented and why
-8. Run the experiment, observe the output, and write `understanding.md` to close the loop
-
-Do not submit an experiment without `understanding.md`. The purpose of this lab is not to produce running code — it is to produce understanding.
+1. Improve correctness, clarity, testing, and reproducibility of Experiment 01 and Experiment 02.
+2. Keep folder/module naming conventions consistent.
+3. Update README and understanding documents when behavior changes.
+4. Keep generated artifacts in `outputs/` and avoid committing them unless needed for teaching evidence.
 
 ---
 

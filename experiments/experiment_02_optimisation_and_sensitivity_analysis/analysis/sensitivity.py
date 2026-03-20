@@ -1,4 +1,3 @@
-import numpy as np
 from calculus.function import DEFAULT_PARAMS
 from optimization.constrained_optimizer import constrained_optimize
 from settings import PERTURBATION_GRID
