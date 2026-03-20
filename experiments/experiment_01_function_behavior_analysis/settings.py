@@ -1,0 +1,7 @@
+"""Configuration for Experiment 01."""
+
+RUN_SEED = 42
+PLOT_DOMAIN = (-2.0, 4.0)
+PLOT_POINTS = 400
+ANIMATION_POINTS = 200
+ANIMATION_INTERVAL_MS = 20

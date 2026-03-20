@@ -1,0 +1,26 @@
+# Python cache and bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Test and tooling cache
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# IDE and OS noise
+.vscode/settings.json
+.DS_Store
+Thumbs.db
+
+# Generated outputs
+experiments/**/outputs/reports/*.txt
+experiments/**/outputs/plots/*.png
+experiments/**/outputs/plots/*.gif

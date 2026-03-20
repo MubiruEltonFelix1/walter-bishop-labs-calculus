@@ -1,9 +1,14 @@
+import numpy as np
+
 from calculus.derivatives import get_derivatives
 from calculus.analysis import find_critical_points
 from visualization.static_plot import plot_function
 from visualization.animation_plot import animate_function
+from settings import RUN_SEED
 
 def run_experiment():
+    np.random.seed(RUN_SEED)
+    print(f"\nRun seed: {RUN_SEED}")
 
     d1, d2 = get_derivatives()
 
