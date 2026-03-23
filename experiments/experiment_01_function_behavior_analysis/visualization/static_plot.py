@@ -19,6 +19,12 @@ def plot_function():
     y2 = f_double_prime(x_vals)
 
     plt.figure(figsize=(8, 5))
+    ax = plt.gca()
+    ax.spines['bottom'].set_linewidth(2.5)
+    ax.spines['left'].set_linewidth(2.5)
+    ax.spines['top'].set_linewidth(2.5)
+    ax.spines['right'].set_linewidth(2.5)
+    
     plt.plot(x_vals, y,  label="f(x)",    linewidth=2)
     plt.plot(x_vals, y1, label="f'(x)",   linewidth=1.5, linestyle='--')
     plt.plot(x_vals, y2, label="f''(x)",  linewidth=1.5, linestyle=':')
@@ -29,8 +35,8 @@ def plot_function():
         plt.scatter([cp_val], [f(cp_val)], zorder=5, s=80,
                     label=f"Critical point x={cp_val:.2f}")
 
-    plt.axhline(0, color='white', linewidth=0.5, alpha=0.4)
-    plt.axvline(0, color='white', linewidth=0.5, alpha=0.4)
+    plt.axhline(0, color='white', linewidth=2, alpha=0.4)
+    plt.axvline(0, color='white', linewidth=2, alpha=0.4)
 
     plt.title("Walter Bishop Calculus Experiment")
     plt.xlabel("x")
