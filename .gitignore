@@ -24,3 +24,11 @@ Thumbs.db
 experiments/**/outputs/reports/*.txt
 experiments/**/outputs/plots/*.png
 experiments/**/outputs/plots/*.gif
+
+# Allow manually captured screenshots to be committed for documentation evidence.
+!experiments/**/outputs/plots/screenshot*.png
+!experiments/**/outputs/plots/screenshot*.jpg
+!experiments/**/outputs/plots/screenshot*.jpeg
+!experiments/**/outputs/plots/*screenshot*.png
+!experiments/**/outputs/plots/*screenshot*.jpg
+!experiments/**/outputs/plots/*screenshot*.jpeg
