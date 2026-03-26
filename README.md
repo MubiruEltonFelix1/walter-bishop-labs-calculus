@@ -1,60 +1,101 @@
 # Walter Bishop Labs: Calculus Experiments
 
-I built this repository to help me understand calculus in a way that complements what I learn in class: not only as formulas to memorize, but as ideas I can test, visualize, and apply.
+Calculus can feel like a wall of symbols until you see it moving, reacting, and making decisions in real systems.
 
-Instead of treating calculus as finished math on paper, I use Python to ask practical questions such as:
-- Where is this function increasing or decreasing?
-- Why does a turning point happen at this exact value of $x$?
-- Which operating point is best when constraints are present?
-- How stable is that recommendation if assumptions change?
+That is exactly why I built this repository.
+I wanted to stop treating calculus as "notes for exams" and start using it like an engineering tool: something you can test, visualize, challenge, and trust.
 
-## Why I Built This
+## Why Calculus Still Matters
 
-In lectures, abstract concepts like derivatives, curvature, optimization, and sensitivity can feel disconnected. I designed these experiments to close that gap:
-- I start with the math from class
-- I encode it in code
-- I visualize the behavior
-- I interpret the result in plain language
+If you use modern technology, you are already surrounded by calculus.
 
-My goal is to make calculus feel intuitive, explainable, and useful for decision-making.
+- Machine learning: training models is optimization, and optimization is calculus in action.
+- Robotics and control systems: derivatives describe motion, velocity, and stability.
+- Computer graphics and simulation: smooth curves, gradients, and dynamic systems depend on calculus.
+- Economics and operations: marginal change, cost optimization, and sensitivity analysis are calculus questions.
+- Product and business decisions: "what happens if this input changes a little?" is fundamentally a derivative mindset.
 
-I still treat this as a student project, but I want the documentation to be organized enough that a lecturer, a teaching assistant, or an experienced reader can quickly understand the technical intent.
+So this repo is not about old math for old classrooms. It is about the mathematical engine behind modern decision systems.
 
-## Who This Is For
+## Why I Run Experiments Instead of Just Solving Equations
 
-I wrote this repository for three groups of readers:
+In class, we often see the final result first.
+In real work, we care about the process and reliability of that result.
 
-1. Students who want a practical bridge between lecture theory and computation.
-2. Experienced readers (including multivariable-calculus learners) who want a clean base that can be extended beyond 1D examples.
+This project turns calculus into an experimental workflow:
+
+1. Start with a function and assumptions.
+2. Derive symbolic truths (exact derivatives, critical points, constraints).
+3. Probe behavior numerically across ranges.
+4. Visualize what the equations are really saying.
+5. Check robustness when assumptions shift.
+6. Convert math into decisions and interpretation.
+
+The goal is to answer not just "what is the answer?" but also:
+
+- Why does this answer happen?
+- When does this answer fail?
+- How much should I trust this operating point?
+
+## Are These Experiments Only Academic?
+
+No. They are academic in foundation, but practical in purpose.
+
+What these experiments train directly:
+
+- Turning abstract derivatives into explainable behavior.
+- Comparing symbolic and numerical methods like a real analysis pipeline.
+- Making optimization choices under constraints.
+- Stress-testing recommendations through sensitivity and robustness checks.
+- Writing results in a way a lecturer, teammate, or reviewer can audit.
+
+This is the same mindset used in analytics, ML tuning, engineering optimization, and quantitative modeling.
+
+## What Makes This Repository Different
+
+Many calculus examples online are "single-shot": compute answer, move on.
+
+This repository is deliberately different:
+
+- It is experiment-driven, not answer-driven.
+- It combines symbolic math and numerical evidence in one workflow.
+- It prioritizes interpretation, not only correctness.
+- It includes structured documentation and validation, not just scripts.
+- It is built in a student voice, but organized for serious technical readers.
+
+In short: this repo treats calculus as a lab, not a checklist.
 
 ## Current Scope
 
-Right now I focus on two connected experiments:
+I currently focus on two connected experiments:
 
-1. Function behavior analysis (single-variable)
-2. Optimization and sensitivity analysis (turning calculus into decisions)
+1. Function behavior analysis (single-variable foundations).
+2. Optimization and sensitivity analysis (decision-focused calculus).
 
-These are student-led lab experiments with a structured methodology.
-
-I am intentionally freezing scope at these two experiments for now and improving depth instead of adding new experiments.
+I am intentionally improving depth in these two experiments before expanding scope.
 
 ## Repository Layout
 
-The project is organized under [experiments](experiments):
+Main experiment folders:
 
 - [experiments/experiment_01_function_behavior_analysis](experiments/experiment_01_function_behavior_analysis)
-  - I analyze one function in depth using symbolic derivatives and visual intuition.
+  - Deep dive into one function using derivatives and visual behavior.
 - [experiments/experiment_02_optimisation_and_sensitivity_analysis](experiments/experiment_02_optimisation_and_sensitivity_analysis)
-  - I extend the same ideas to optimization, constraints, and robustness checks.
+  - Extends analysis into optimization, constraints, and robustness.
 
-Supporting documents at the repository root summarize progression and learning flow across experiments.
+Useful root-level guides:
 
-Recommended reading sequence:
-- `README.md`
-- `experiment_structure.md`
-- `BRIDGE_EXPERIMENTS_01_TO_02.md`
-- `experiments/experiment_01_function_behavior_analysis/README.md`
-- `experiments/experiment_02_optimisation_and_sensitivity_analysis/README.md`
+- [README.md](README.md)
+- [experiment_structure.md](experiment_structure.md)
+- [BRIDGE_EXPERIMENTS_01_TO_02.md](BRIDGE_EXPERIMENTS_01_TO_02.md)
+
+Recommended read path:
+
+1. [README.md](README.md)
+2. [experiment_structure.md](experiment_structure.md)
+3. [BRIDGE_EXPERIMENTS_01_TO_02.md](BRIDGE_EXPERIMENTS_01_TO_02.md)
+4. [experiments/experiment_01_function_behavior_analysis/README.md](experiments/experiment_01_function_behavior_analysis/README.md)
+5. [experiments/experiment_02_optimisation_and_sensitivity_analysis/README.md](experiments/experiment_02_optimisation_and_sensitivity_analysis/README.md)
 
 ## Quick Start
 
@@ -63,98 +104,71 @@ python -m pip install -r requirements.txt
 python run_experiments.py --exp 1
 ```
 
-If you want to run Experiment 02:
+Run Experiment 02:
 
 ```bash
 python run_experiments.py --exp 2
 ```
 
-If you want to run both experiments in sequence:
+Run both experiments:
 
 ```bash
 python run_experiments.py --exp both
 ```
 
-If you only want non-plot validation checks:
+Run validation only (no plots):
 
 ```bash
 python run_experiments.py --validate
 ```
 
-These commands are repository-root commands. No absolute paths or manual interpreter path edits are required.
-
-## How I Work in Each Experiment
-
-My usual workflow is:
-
-1. Define a function
-2. Compute derivatives symbolically (with SymPy)
-3. Find candidate points (like critical points)
-4. Sample numerically for plotting
-5. Interpret the results from both math and visuals
-6. Convert math insight into a clear recommendation (when applicable)
-
-This keeps the project close to classroom calculus while still being practical and auditable.
+All commands are run from repository root.
 
 ## Technical Approach
 
-I intentionally combine two computation styles:
+I intentionally combine:
 
-- Symbolic computation (SymPy): for exact derivatives, exact candidate discovery, and mathematical transparency.
-- Numerical computation (NumPy/Matplotlib): for dense sampling, plotting, animation, and practical behavior checks.
+- Symbolic computation (SymPy): exact derivatives, exact candidate discovery, transparent algebra.
+- Numerical computation (NumPy/Matplotlib): sampling, plotting, behavior verification, and visual intuition.
 
-This hybrid approach helps me avoid two extremes: pure symbolic work with limited visual intuition, and pure numerical work with weak algebraic traceability.
+This hybrid method avoids two common traps:
 
-## What Makes This Different (For Me)
-
-Many examples online stop at "here is the correct answer".
-I care more about "why this answer makes sense".
-
-So I always try to connect:
-- symbolic result
-- geometric meaning
-- practical decision
+- Pure symbolic work that is hard to intuit.
+- Pure numerical work that is hard to justify mathematically.
 
 ## Learning Outcomes I Target
 
-After running these experiments, I expect to be able to:
+After running these experiments, I should be able to:
 
-1. Derive and interpret $f'(x)$ and $f''(x)$ in a computational setting.
-2. Link critical points to geometric behavior (max/min/concavity transitions).
-3. Compare symbolic and numerical optimization strategies.
-4. Explain sensitivity and robustness in plain language.
-5. Communicate findings in a report format that is mathematically correct but still readable.
-
-## Near-Term Next Steps
-
-I plan to keep improving these two experiments by hardening:
-- automatic classification of critical points
-- inflection point detection
-- better tangent-line intuition tools
-- clearer sensitivity visuals
-- stronger run validation and smoke tests
-- tighter reproducibility and reporting conventions
+1. Interpret $f'(x)$ and $f''(x)$ computationally and geometrically.
+2. Link critical points to actual curve behavior and decision implications.
+3. Compare optimization methods and explain trade-offs clearly.
+4. Discuss sensitivity and robustness in plain, practical language.
+5. Produce reports that are mathematically sound and readable.
 
 ## Quality and Limitations
 
-I aim for conceptual clarity first, then engineering polish. Current limitations include:
+This project prioritizes conceptual clarity first, then engineering maturity.
 
-- heavy focus on 1D objective functions
-- function-class assumptions that can break for non-smooth expressions
-- manual parameterization choices in some modules
-- early-stage reporting and testing depth
+Current limitations:
 
-I document these limitations intentionally so readers can evaluate scope and trust level correctly.
+- Mostly 1D objective-function focus.
+- Some assumptions may not generalize to non-smooth functions.
+- Certain parameter choices are still manually tuned.
+- Reporting and test depth are improving, but not exhaustive yet.
+
+These limitations are documented so scope and confidence are explicit.
 
 ## Contributing
 
-If you want to contribute, I welcome changes that improve:
-- conceptual clarity
-- correctness of the math/code
-- interpretability of outputs
+Contributions are welcome if they improve:
 
-Please keep the style educational, practical, and technically grounded.
+- calculus interpretation and clarity
+- mathematical or code correctness
+- output explainability and reproducibility
+
+Please keep contributions educational, practical, and technically grounded.
 
 ## License
 
-This repository uses the MIT License. See the root `LICENSE` file.
+This repository uses the MIT License. See [LICENSE](LICENSE).
