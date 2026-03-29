@@ -67,12 +67,13 @@ In short: this repo treats calculus as a lab, not a checklist.
 
 ## Current Scope
 
-I currently focus on two connected experiments:
+I currently focus on three connected experiments:
 
 1. Function behavior analysis (single-variable foundations).
 2. Optimization and sensitivity analysis (decision-focused calculus).
+3. Integral calculus for modern accumulation problems (rate-to-total systems, numerical reliability, and applied interpretation).
 
-I am intentionally improving depth in these two experiments before expanding scope.
+The sequence is intentional: local change -> optimal decision points -> accumulated system impact.
 
 ## Repository Layout
 
@@ -82,6 +83,8 @@ Main experiment folders:
   - Deep dive into one function using derivatives and visual behavior.
 - [experiments/experiment_02_optimisation_and_sensitivity_analysis](experiments/experiment_02_optimisation_and_sensitivity_analysis)
   - Extends analysis into optimization, constraints, and robustness.
+- [experiments/experiment_03_integral_calculus](experiments/experiment_03_integral_calculus)
+  - Reframes integration as a modern applied experiment for estimating totals from sampled or modelled rate signals.
 
 Useful root-level guides:
 
@@ -96,6 +99,7 @@ Recommended read path:
 3. [BRIDGE_EXPERIMENTS_01_TO_02.md](BRIDGE_EXPERIMENTS_01_TO_02.md)
 4. [experiments/experiment_01_function_behavior_analysis/README.md](experiments/experiment_01_function_behavior_analysis/README.md)
 5. [experiments/experiment_02_optimisation_and_sensitivity_analysis/README.md](experiments/experiment_02_optimisation_and_sensitivity_analysis/README.md)
+6. [experiments/experiment_03_integral_calculus/README.md](experiments/experiment_03_integral_calculus/README.md)
 
 ## Quick Start
 
@@ -108,6 +112,12 @@ Run Experiment 02:
 
 ```bash
 python run_experiments.py --exp 2
+```
+
+Run Experiment 03 (direct experiment entry):
+
+```bash
+python experiments/experiment_03_integral_calculus/main.py
 ```
 
 Run both experiments:
