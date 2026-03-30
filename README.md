@@ -67,11 +67,12 @@ In short: this repo treats calculus as a lab, not a checklist.
 
 ## Current Scope
 
-I currently focus on three connected experiments:
+I currently focus on four connected experiments:
 
 1. Function behavior analysis (single-variable foundations).
 2. Optimization and sensitivity analysis (decision-focused calculus).
 3. Integral calculus for modern accumulation problems (rate-to-total systems, numerical reliability, and applied interpretation).
+4. Fourier series reconstruction for periodic waveform analysis (harmonic approximation, spectra, and reconstruction error).
 
 The sequence is intentional: local change -> optimal decision points -> accumulated system impact.
 
@@ -85,6 +86,8 @@ Main experiment folders:
   - Extends analysis into optimization, constraints, and robustness.
 - [experiments/experiment_03_integral_calculus](experiments/experiment_03_integral_calculus)
   - Reframes integration as a modern applied experiment for estimating totals from sampled or modelled rate signals.
+- [experiments/experiment_04_fourier_series_reconstruction](experiments/experiment_04_fourier_series_reconstruction)
+  - Reconstructs periodic signals using Fourier partial sums and tracks approximation quality.
 
 Useful root-level guides:
 
@@ -100,6 +103,7 @@ Recommended read path:
 4. [experiments/experiment_01_function_behavior_analysis/README.md](experiments/experiment_01_function_behavior_analysis/README.md)
 5. [experiments/experiment_02_optimisation_and_sensitivity_analysis/README.md](experiments/experiment_02_optimisation_and_sensitivity_analysis/README.md)
 6. [experiments/experiment_03_integral_calculus/README.md](experiments/experiment_03_integral_calculus/README.md)
+7. [experiments/experiment_04_fourier_series_reconstruction/README.md](experiments/experiment_04_fourier_series_reconstruction/README.md)
 
 ## Quick Start
 
@@ -120,10 +124,22 @@ Run Experiment 03 (direct experiment entry):
 python experiments/experiment_03_integral_calculus/main.py
 ```
 
+Run Experiment 04 (direct experiment entry):
+
+```bash
+python experiments/experiment_04_fourier_series_reconstruction/main.py
+```
+
 Run both experiments:
 
 ```bash
 python run_experiments.py --exp both
+```
+
+Run all implemented experiments (01 to 04):
+
+```bash
+python run_experiments.py --exp all
 ```
 
 Run validation only (no plots):

@@ -38,6 +38,27 @@ assert abs(result['recommended_x'] - 2.0) < 1e-8
 print('pass')
 """,
     },
+    {
+        'name': 'Experiment 04 core checks',
+        'cwd': ROOT / 'experiments' / 'experiment_04_fourier_series_reconstruction',
+        'code': """
+import numpy as np
+from calculus import FourierSeriesEngine
+
+engine = FourierSeriesEngine()
+coeff = engine.compute_coefficients('square', n_terms=15, n_samples=12000)
+
+# For a square wave, cosine terms should stay close to zero.
+assert abs(coeff['a0']) < 0.05
+assert np.max(np.abs(coeff['an'][:8])) < 0.1
+
+# First sine harmonic should be close to 4/pi.
+expected_b1 = 4 / np.pi
+assert abs(coeff['bn'][0] - expected_b1) < 0.08
+
+print('pass')
+""",
+    },
 ]
 
 
