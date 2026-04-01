@@ -1,26 +1,42 @@
-# Walter Bishop Labs: Calculus Experiments
+# 🧪 Walter Bishop Labs: Calculus Experiments
+
+> *"Calculus is not a subject you learn. It is a tool you develop."*
+
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue?style=flat-square&logo=python&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
+![SymPy](https://img.shields.io/badge/SymPy-Symbolic%20Math-8B2BE2?style=flat-square&logo=sympy&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-Numerical-013243?style=flat-square&logo=numpy&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-11557C?style=flat-square)
+![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square)
+![Experiments](https://img.shields.io/badge/Experiments-4-orange?style=flat-square)
+
+---
 
 Calculus can feel like a wall of symbols until you see it moving, reacting, and making decisions in real systems.
 
 That is exactly why I built this repository.
-I wanted to stop treating calculus as "notes for exams" and start using it like an engineering tool: something you can test, visualize, challenge, and trust.
+I wanted to stop treating calculus as *"notes for exams"* and start using it like an engineering tool: something you can test, visualize, challenge, and trust.
+
+---
 
 ## Why Calculus Still Matters
 
 If you use modern technology, you are already surrounded by calculus.
 
-- Machine learning: training models is optimization, and optimization is calculus in action.
-- Robotics and control systems: derivatives describe motion, velocity, and stability.
-- Computer graphics and simulation: smooth curves, gradients, and dynamic systems depend on calculus.
-- Economics and operations: marginal change, cost optimization, and sensitivity analysis are calculus questions.
-- Product and business decisions: "what happens if this input changes a little?" is fundamentally a derivative mindset.
+- **Machine learning** — training models is optimization, and optimization is calculus in action.
+- **Robotics and control systems** — derivatives describe motion, velocity, and stability.
+- **Computer graphics and simulation** — smooth curves, gradients, and dynamic systems depend on calculus.
+- **Economics and operations** — marginal change, cost optimization, and sensitivity analysis are calculus questions.
+- **Product and business decisions** — *"what happens if this input changes a little?"* is fundamentally a derivative mindset.
 
 So this repo is not about old math for old classrooms. It is about the mathematical engine behind modern decision systems.
+
+---
 
 ## Why I Run Experiments Instead of Just Solving Equations
 
 In class, we often see the final result first.
-In real work, we care about the process and reliability of that result.
+In real work, we care about the *process* and *reliability* of that result.
 
 This project turns calculus into an experimental workflow:
 
@@ -31,11 +47,13 @@ This project turns calculus into an experimental workflow:
 5. Check robustness when assumptions shift.
 6. Convert math into decisions and interpretation.
 
-The goal is to answer not just "what is the answer?" but also:
+The goal is to answer not just *"what is the answer?"* but also:
 
 - Why does this answer happen?
 - When does this answer fail?
 - How much should I trust this operating point?
+
+---
 
 ## Are These Experiments Only Academic?
 
@@ -51,118 +69,116 @@ What these experiments train directly:
 
 This is the same mindset used in analytics, ML tuning, engineering optimization, and quantitative modeling.
 
+---
+
 ## What Makes This Repository Different
 
-Many calculus examples online are "single-shot": compute answer, move on.
+Many calculus examples online are *"single-shot"*: compute answer, move on.
 
 This repository is deliberately different:
 
-- It is experiment-driven, not answer-driven.
-- It combines symbolic math and numerical evidence in one workflow.
-- It prioritizes interpretation, not only correctness.
-- It includes structured documentation and validation, not just scripts.
-- It is built in a student voice, but organized for serious technical readers.
+| Principle | What it means |
+|---|---|
+| Experiment-driven | Not answer-driven — the process is the product |
+| Hybrid methods | Symbolic math and numerical evidence in one workflow |
+| Interpretation-first | Results explained, not just computed |
+| Structured documentation | Validation and writeups, not just scripts |
+| Student voice | Built accessibly, organized for serious technical readers |
 
 In short: this repo treats calculus as a lab, not a checklist.
 
-## Current Scope
+---
 
-I currently focus on four connected experiments:
+## Experiments
 
-1. Function behavior analysis (single-variable foundations).
-2. Optimization and sensitivity analysis (decision-focused calculus).
-3. Integral calculus for modern accumulation problems (rate-to-total systems, numerical reliability, and applied interpretation).
-4. Fourier series reconstruction for periodic waveform analysis (harmonic approximation, spectra, and reconstruction error).
+> The sequence is intentional: **local change → optimal decision points → accumulated system impact**
 
-The sequence is intentional: local change -> optimal decision points -> accumulated system impact.
+| # | Experiment | Focus |
+|---|---|---|
+| 01 | [Function Behavior Analysis](experiments/experiment_01_function_behavior_analysis) | Deep dive into one function using derivatives and visual behavior |
+| 02 | [Optimisation and Sensitivity Analysis](experiments/experiment_02_optimisation_and_sensitivity_analysis) | Extends analysis into optimization, constraints, and robustness |
+| 03 | [Integral Calculus](experiments/experiment_03_integral_calculus) | Integration as a modern applied experiment for estimating totals from sampled or modelled rate signals |
+| 04 | [Fourier Series Reconstruction](experiments/experiment_04_fourier_series_reconstruction) | Reconstructs periodic signals using Fourier partial sums and tracks approximation quality |
+
+---
 
 ## Repository Layout
 
-Main experiment folders:
+```
+.
+├── README.md
+├── experiment_structure.md
+├── BRIDGE_EXPERIMENTS_01_TO_02.md
+├── run_experiments.py
+├── requirements.txt
+└── experiments/
+    ├── experiment_01_function_behavior_analysis/
+    ├── experiment_02_optimisation_and_sensitivity_analysis/
+    ├── experiment_03_integral_calculus/
+    └── experiment_04_fourier_series_reconstruction/
+```
 
-- [experiments/experiment_01_function_behavior_analysis](experiments/experiment_01_function_behavior_analysis)
-  - Deep dive into one function using derivatives and visual behavior.
-- [experiments/experiment_02_optimisation_and_sensitivity_analysis](experiments/experiment_02_optimisation_and_sensitivity_analysis)
-  - Extends analysis into optimization, constraints, and robustness.
-- [experiments/experiment_03_integral_calculus](experiments/experiment_03_integral_calculus)
-  - Reframes integration as a modern applied experiment for estimating totals from sampled or modelled rate signals.
-- [experiments/experiment_04_fourier_series_reconstruction](experiments/experiment_04_fourier_series_reconstruction)
-  - Reconstructs periodic signals using Fourier partial sums and tracks approximation quality.
-
-Useful root-level guides:
-
-- [README.md](README.md)
-- [experiment_structure.md](experiment_structure.md)
-- [BRIDGE_EXPERIMENTS_01_TO_02.md](BRIDGE_EXPERIMENTS_01_TO_02.md)
-
-Recommended read path:
+**Recommended read path:**
 
 1. [README.md](README.md)
 2. [experiment_structure.md](experiment_structure.md)
 3. [BRIDGE_EXPERIMENTS_01_TO_02.md](BRIDGE_EXPERIMENTS_01_TO_02.md)
-4. [experiments/experiment_01_function_behavior_analysis/README.md](experiments/experiment_01_function_behavior_analysis/README.md)
-5. [experiments/experiment_02_optimisation_and_sensitivity_analysis/README.md](experiments/experiment_02_optimisation_and_sensitivity_analysis/README.md)
-6. [experiments/experiment_03_integral_calculus/README.md](experiments/experiment_03_integral_calculus/README.md)
-7. [experiments/experiment_04_fourier_series_reconstruction/README.md](experiments/experiment_04_fourier_series_reconstruction/README.md)
+4. [Experiment 01 README](experiments/experiment_01_function_behavior_analysis/README.md)
+5. [Experiment 02 README](experiments/experiment_02_optimisation_and_sensitivity_analysis/README.md)
+6. [Experiment 03 README](experiments/experiment_03_integral_calculus/README.md)
+7. [Experiment 04 README](experiments/experiment_04_fourier_series_reconstruction/README.md)
+
+---
 
 ## Quick Start
 
 ```bash
-python -m pip install -r requirements.txt
+# Install dependencies
+pip install -r requirements.txt
+
+# Run Experiment 01
 python run_experiments.py --exp 1
-```
 
-Run Experiment 02:
-
-```bash
+# Run Experiment 02
 python run_experiments.py --exp 2
-```
 
-Run Experiment 03 (direct experiment entry):
-
-```bash
+# Run Experiment 03 (direct entry)
 python experiments/experiment_03_integral_calculus/main.py
-```
 
-Run Experiment 04 (direct experiment entry):
-
-```bash
+# Run Experiment 04 (direct entry)
 python experiments/experiment_04_fourier_series_reconstruction/main.py
-```
 
-Run both experiments:
-
-```bash
+# Run both (01 and 02)
 python run_experiments.py --exp both
-```
 
-Run all implemented experiments (01 to 04):
-
-```bash
+# Run all experiments (01 to 04)
 python run_experiments.py --exp all
-```
 
-Run validation only (no plots):
-
-```bash
+# Run validation only (no plots)
 python run_experiments.py --validate
 ```
 
-All commands are run from repository root.
+> All commands are run from the repository root.
+
+---
 
 ## Technical Approach
 
-I intentionally combine:
+This project intentionally combines two complementary methods:
 
-- Symbolic computation (SymPy): exact derivatives, exact candidate discovery, transparent algebra.
-- Numerical computation (NumPy/Matplotlib): sampling, plotting, behavior verification, and visual intuition.
+| Method | Tool | Purpose |
+|---|---|---|
+| Symbolic computation | SymPy | Exact derivatives, candidate discovery, transparent algebra |
+| Numerical computation | NumPy / Matplotlib | Sampling, plotting, behavior verification, and visual intuition |
 
-This hybrid method avoids two common traps:
+This hybrid approach avoids two common traps:
 
-- Pure symbolic work that is hard to intuit.
-- Pure numerical work that is hard to justify mathematically.
+- **Pure symbolic work** that is hard to intuit.
+- **Pure numerical work** that is hard to justify mathematically.
 
-## Learning Outcomes I Target
+---
+
+## Learning Outcomes
 
 After running these experiments, I should be able to:
 
@@ -172,29 +188,37 @@ After running these experiments, I should be able to:
 4. Discuss sensitivity and robustness in plain, practical language.
 5. Produce reports that are mathematically sound and readable.
 
+---
+
 ## Quality and Limitations
 
-This project prioritizes conceptual clarity first, then engineering maturity.
+This project prioritizes **conceptual clarity first**, then engineering maturity.
 
-Current limitations:
+Current limitations (explicitly documented so scope and confidence are clear):
 
 - Mostly 1D objective-function focus.
 - Some assumptions may not generalize to non-smooth functions.
 - Certain parameter choices are still manually tuned.
 - Reporting and test depth are improving, but not exhaustive yet.
 
-These limitations are documented so scope and confidence are explicit.
+---
 
 ## Contributing
 
 Contributions are welcome if they improve:
 
-- calculus interpretation and clarity
-- mathematical or code correctness
-- output explainability and reproducibility
+- Calculus interpretation and clarity
+- Mathematical or code correctness
+- Output explainability and reproducibility
 
-Please keep contributions educational, practical, and technically grounded.
+Please keep contributions **educational, practical, and technically grounded**.
+
+---
 
 ## License
 
-This repository uses the MIT License. See [LICENSE](LICENSE).
+This repository uses the **MIT License**. See [LICENSE](LICENSE).
+
+---
+
+<p align="center">Built with curiosity. Verified with evidence. Explained with intention.</p>
