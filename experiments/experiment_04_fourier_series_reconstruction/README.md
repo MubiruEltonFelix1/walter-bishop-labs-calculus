@@ -50,6 +50,8 @@ Optional interactive mode:
 python run_interactive.py
 ```
 
+The interactive launcher lets you choose one waveform or run all three in sequence, then it shows each plot window one at a time.
+
 ## Output Artifacts
 
 Generated files are saved to:

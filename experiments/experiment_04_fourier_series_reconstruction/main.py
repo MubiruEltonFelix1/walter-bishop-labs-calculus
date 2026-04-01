@@ -26,7 +26,7 @@ def setup_output_directories():
     return plots, reports
 
 
-def run_experiment(show_progress: bool = True):
+def run_experiment(show_progress: bool = True, selected_functions=None):
     if show_progress:
         print("\n" + "=" * 80)
         print("EXPERIMENT 04: FOURIER SERIES RECONSTRUCTION")
@@ -50,8 +50,14 @@ def run_experiment(show_progress: bool = True):
     )
 
     results_by_function = {}
+    functions_to_run = settings.FUNCTIONS if selected_functions is None else list(selected_functions)
 
-    for function_name in settings.FUNCTIONS:
+    if not functions_to_run:
+        raise ValueError("selected_functions must contain at least one function name")
+
+    for function_name in functions_to_run:
+        if function_name not in settings.FUNCTIONS:
+            raise ValueError(f"Unsupported function selected: {function_name}")
         if show_progress:
             print(f"\nAnalyzing function: {function_name}")
 

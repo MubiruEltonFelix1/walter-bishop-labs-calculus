@@ -24,13 +24,14 @@ class FourierVisualizer:
         ax.plot(x, y_true, color="black", linewidth=2.4, label="True signal")
 
         for n_terms, y_hat in reconstructions.items():
-            ax.plot(x, y_hat, linewidth=1.4, alpha=0.9, label=f"N={n_terms}")
+            ax.plot(x, y_hat, linewidth=1.5, alpha=0.92, label=f"N = {n_terms}")
 
         ax.set_title(title, fontsize=13, fontweight="bold")
-        ax.set_xlabel("x")
-        ax.set_ylabel("f(x)")
+        ax.set_xlabel("x (radians)")
+        ax.set_ylabel("Signal amplitude")
         ax.grid(True, alpha=0.3)
-        ax.legend(ncol=2)
+        ax.margins(x=0.01)
+        ax.legend(ncol=2, title="Partial sums", frameon=False)
         fig.tight_layout()
         fig.savefig(filename, dpi=self.dpi, bbox_inches="tight")
         if show:
@@ -44,8 +45,9 @@ class FourierVisualizer:
         ax.stem(indices, magnitudes, basefmt=" ")
         ax.set_title(title, fontsize=13, fontweight="bold")
         ax.set_xlabel("Harmonic n")
-        ax.set_ylabel("Magnitude sqrt(an^2 + bn^2)")
+        ax.set_ylabel("Coefficient magnitude")
         ax.grid(True, alpha=0.3)
+        ax.margins(x=0.01)
         fig.tight_layout()
         fig.savefig(filename, dpi=self.dpi, bbox_inches="tight")
         if show:
@@ -58,9 +60,9 @@ class FourierVisualizer:
         ax.plot(harmonic_counts, max_error_values, marker="s", linewidth=2, label="Max abs error")
         ax.set_title(title, fontsize=13, fontweight="bold")
         ax.set_xlabel("Number of harmonics (N)")
-        ax.set_ylabel("Error")
+        ax.set_ylabel("Error value")
         ax.grid(True, alpha=0.3)
-        ax.legend()
+        ax.legend(title="Metric", frameon=False)
         fig.tight_layout()
         fig.savefig(filename, dpi=self.dpi, bbox_inches="tight")
         if show:
