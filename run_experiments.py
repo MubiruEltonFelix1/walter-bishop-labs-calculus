@@ -5,6 +5,7 @@ Usage examples:
     python run_experiments.py --exp 2
     python run_experiments.py --exp 3
     python run_experiments.py --exp 4
+    python run_experiments.py --exp 5
     python run_experiments.py --exp both
     python run_experiments.py --exp all
     python run_experiments.py --validate
@@ -23,6 +24,7 @@ EXP_01_DIR = ROOT / "experiments" / "experiment_01_function_behavior_analysis"
 EXP_02_DIR = ROOT / "experiments" / "experiment_02_optimisation_and_sensitivity_analysis"
 EXP_03_DIR = ROOT / "experiments" / "experiment_03_integral_calculus"
 EXP_04_DIR = ROOT / "experiments" / "experiment_04_fourier_series_reconstruction"
+EXP_05_DIR = ROOT / "experiments" / "experiment_05_series_sequence_convergence_applications"
 
 
 def run_python_script(cwd: Path, script_name: str) -> int:
@@ -49,7 +51,7 @@ def main() -> int:
     )
     parser.add_argument(
         "--exp",
-        choices=["1", "2", "3", "4", "both", "all"],
+        choices=["1", "2", "3", "4", "5", "both", "all"],
         default="both",
         help="Which experiment to run (default: both, meaning 1 and 2).",
     )
@@ -75,8 +77,11 @@ def main() -> int:
     if args.exp == "4":
         return run_python_script(EXP_04_DIR, "main.py")
 
+    if args.exp == "5":
+        return run_python_script(EXP_05_DIR, "main.py")
+
     if args.exp == "all":
-        for exp_dir in (EXP_01_DIR, EXP_02_DIR, EXP_03_DIR, EXP_04_DIR):
+        for exp_dir in (EXP_01_DIR, EXP_02_DIR, EXP_03_DIR, EXP_04_DIR, EXP_05_DIR):
             exit_code = run_python_script(exp_dir, "main.py")
             if exit_code != 0:
                 return exit_code

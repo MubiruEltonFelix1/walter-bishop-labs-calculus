@@ -8,7 +8,7 @@
 ![NumPy](https://img.shields.io/badge/NumPy-Numerical-013243?style=flat-square&logo=numpy&logoColor=white)
 ![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-11557C?style=flat-square)
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square)
-![Experiments](https://img.shields.io/badge/Experiments-4-orange?style=flat-square)
+![Experiments](https://img.shields.io/badge/Experiments-5-orange?style=flat-square)
 
 ---
 
@@ -99,6 +99,7 @@ In short: this repo treats calculus as a lab, not a checklist.
 | 02 | [Optimisation and Sensitivity Analysis](experiments/experiment_02_optimisation_and_sensitivity_analysis) | Extends analysis into optimization, constraints, and robustness |
 | 03 | [Integral Calculus](experiments/experiment_03_integral_calculus) | Integration as a modern applied experiment for estimating totals from sampled or modelled rate signals |
 | 04 | [Fourier Series Reconstruction](experiments/experiment_04_fourier_series_reconstruction) | Reconstructs periodic signals using Fourier partial sums and tracks approximation quality |
+| 05 | [Series and Sequence Convergence Applications](experiments/experiment_05_series_sequence_convergence_applications) | Practical convergence/divergence analysis with recursive systems, partial sums, and animated behavior |
 
 ---
 
@@ -115,7 +116,8 @@ In short: this repo treats calculus as a lab, not a checklist.
     ├── experiment_01_function_behavior_analysis/
     ├── experiment_02_optimisation_and_sensitivity_analysis/
     ├── experiment_03_integral_calculus/
-    └── experiment_04_fourier_series_reconstruction/
+    ├── experiment_04_fourier_series_reconstruction/
+    └── experiment_05_series_sequence_convergence_applications/
 ```
 
 **Recommended read path:**
@@ -127,6 +129,7 @@ In short: this repo treats calculus as a lab, not a checklist.
 5. [Experiment 02 README](experiments/experiment_02_optimisation_and_sensitivity_analysis/README.md)
 6. [Experiment 03 README](experiments/experiment_03_integral_calculus/README.md)
 7. [Experiment 04 README](experiments/experiment_04_fourier_series_reconstruction/README.md)
+8. [Experiment 05 README](experiments/experiment_05_series_sequence_convergence_applications/README.md)
 
 ---
 
@@ -148,10 +151,13 @@ python experiments/experiment_03_integral_calculus/main.py
 # Run Experiment 04 (direct entry)
 python experiments/experiment_04_fourier_series_reconstruction/main.py
 
+# Run Experiment 05 (direct entry)
+python experiments/experiment_05_series_sequence_convergence_applications/main.py
+
 # Run both (01 and 02)
 python run_experiments.py --exp both
 
-# Run all experiments (01 to 04)
+# Run all experiments (01 to 05)
 python run_experiments.py --exp all
 
 # Run validation only (no plots)

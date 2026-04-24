@@ -2,7 +2,7 @@
 
 This document explains how experiments in this repository are designed, what each part of the folder structure does, and what conventions every experiment follows. Read this before contributing, before running a new experiment, or before building one from scratch.
 
-Current repository scope is intentionally frozen to Experiment 01 and Experiment 02. This document is still useful for consistency and maintenance.
+Current repository scope includes Experiments 01 through 05. This document is still useful for consistency and maintenance.
 
 ---
 
@@ -31,7 +31,10 @@ walter-bishop-labs-calculus/
 │
 └── experiments/
     ├── experiment_01_.../       ← First complete experiment
-    └── experiment_02_.../       ← Second complete experiment
+    ├── experiment_02_.../       ← Second complete experiment
+    ├── experiment_03_.../       ← Third complete experiment
+    ├── experiment_04_.../       ← Fourth complete experiment
+    └── experiment_05_.../       ← Fifth complete experiment
 ```
 
 Experiments are numbered sequentially and named descriptively. The number reflects the order in which concepts build on each other.
@@ -155,7 +158,9 @@ Experiments are ordered so that each one builds on the conceptual foundation of 
 ```
 Experiment 01 — establishes what a function is doing (behavior analysis)
 Experiment 02 — establishes what to do with that information (optimization)
-No additional experiments are currently planned in this repository branch.
+Experiment 03 — converts changing rates into accumulated impact (integration)
+Experiment 04 — reconstructs periodic behavior from harmonics (Fourier series)
+Experiment 05 — tests practical stability of recursive and accumulated systems (sequence/series convergence)
 ```
 
 Experiment 02 depends directly on foundations built in Experiment 01, and that dependency is documented in project READMEs.
