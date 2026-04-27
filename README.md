@@ -1,3 +1,5 @@
+![Walter Bishop Labs Calculus Experiments banner](assets/repo-banner.svg)
+
 # 🧪 Walter Bishop Labs: Calculus Experiments
 
 > *"Calculus is not a subject you learn. It is a tool you develop."*
@@ -12,10 +14,17 @@
 
 ---
 
-Calculus can feel like a wall of symbols until you see it moving, reacting, and making decisions in real systems.
+## What This Repository Is
 
-That is exactly why I built this repository.
-I wanted to stop treating calculus as *"notes for exams"* and start using it like an engineering tool: something you can test, visualize, challenge, and trust.
+This is my calculus lab: a set of experiments that turn derivatives, optimization, integration, and Fourier series into something you can inspect, plot, compare, and explain.
+
+I built it to move calculus out of the "solve and forget" zone and into a workflow that feels closer to engineering, data analysis, and scientific reasoning.
+
+## What To Expect
+
+Expect a steady experiment-by-experiment progression, a mix of symbolic math and numerical verification, and plots plus reports that focus on behavior instead of only final answers. The writing is aimed at readers who want both intuition and technical confidence.
+
+If you skim only one part of this README, make it the sections below. They explain the value of the repo quickly and then show how the experiments fit together.
 
 ---
 
@@ -23,17 +32,11 @@ I wanted to stop treating calculus as *"notes for exams"* and start using it lik
 
 If you use modern technology, you are already surrounded by calculus.
 
-- **Machine learning** — training models is optimization, and optimization is calculus in action.
-- **Robotics and control systems** — derivatives describe motion, velocity, and stability.
-- **Computer graphics and simulation** — smooth curves, gradients, and dynamic systems depend on calculus.
-- **Economics and operations** — marginal change, cost optimization, and sensitivity analysis are calculus questions.
-- **Product and business decisions** — *"what happens if this input changes a little?"* is fundamentally a derivative mindset.
-
-So this repo is not about old math for old classrooms. It is about the mathematical engine behind modern decision systems.
+Machine learning depends on optimization, robotics and control systems rely on derivatives for motion and stability, computer graphics and simulation use smooth curves and gradients, and economics or operations often come down to marginal change and sensitivity. Product decisions use the same mindset whenever the question becomes, *"what happens if this input changes a little?"* So this repo is not about old math for old classrooms. It is about the mathematical engine behind modern decision systems.
 
 ---
 
-## Why I Run Experiments Instead of Just Solving Equations
+## How I Use Experiments
 
 In class, we often see the final result first.
 In real work, we care about the *process* and *reliability* of that result.
@@ -47,27 +50,26 @@ This project turns calculus into an experimental workflow:
 5. Check robustness when assumptions shift.
 6. Convert math into decisions and interpretation.
 
-The goal is to answer not just *"what is the answer?"* but also:
-
-- Why does this answer happen?
-- When does this answer fail?
-- How much should I trust this operating point?
+The goal is to answer not just *"what is the answer?"* but also why that answer happens, when it fails, and how much trust it deserves.
 
 ---
 
-## Are These Experiments Only Academic?
+## Why This Is Useful
 
-No. They are academic in foundation, but practical in purpose.
+Yes. The experiments are academic in foundation, but practical in purpose.
 
-What these experiments train directly:
+They train the habit of turning abstract derivatives into explainable behavior, comparing symbolic and numerical methods as one analysis pipeline, making optimization choices under constraints, stress-testing recommendations through sensitivity and robustness checks, and writing results in a way a lecturer, teammate, or reviewer can audit. This is the same mindset used in analytics, ML tuning, engineering optimization, and quantitative modeling.
 
-- Turning abstract derivatives into explainable behavior.
-- Comparing symbolic and numerical methods like a real analysis pipeline.
-- Making optimization choices under constraints.
-- Stress-testing recommendations through sensitivity and robustness checks.
-- Writing results in a way a lecturer, teammate, or reviewer can audit.
+---
 
-This is the same mindset used in analytics, ML tuning, engineering optimization, and quantitative modeling.
+## Reading Path
+
+If you want the fastest route through the repo, start here:
+
+1. Read this README for the big picture.
+2. Open [experiment_structure.md](experiment_structure.md) for the map of the project.
+3. Use [BRIDGE_EXPERIMENTS_01_TO_02.md](BRIDGE_EXPERIMENTS_01_TO_02.md) to see how the first experiments connect.
+4. Dive into the experiment READMEs in order if you want the full progression.
 
 ---
 
@@ -93,6 +95,15 @@ In short: this repo treats calculus as a lab, not a checklist.
 
 > The sequence is intentional: **local change → optimal decision points → accumulated system impact**
 
+| Stage | What changes | What you learn |
+|---|---|---|
+| 01 | Single-function behavior | How derivatives reveal shape, turning points, and local structure |
+| 02 | Optimization under constraints | How to choose better operating points and test sensitivity |
+| 03 | Accumulated effect | How integration turns rate signals into totals |
+| 04 | Periodic reconstruction | How Fourier series rebuild signals from harmonics |
+| 05 | Convergence behavior | How recursive systems and partial sums settle or diverge |
+| 06 | Parameter sensitivity | How coefficient scaling changes reconstruction quality |
+
 | # | Experiment | Focus |
 |---|---|---|
 | 01 | [Function Behavior Analysis](experiments/experiment_01_function_behavior_analysis) | Deep dive into one function using derivatives and visual behavior |
@@ -103,6 +114,12 @@ In short: this repo treats calculus as a lab, not a checklist.
 | 06 | [Fourier Series Parameter Sensitivity](experiments/experiment_06_fourier_series_parameter_sensitivity) | Studies Fourier series coefficient scaling, amplitude changes, and harmonic-count sensitivity through graphs and animations |
 
 ---
+
+## In Plain Terms
+
+If you are wondering whether this repo is worth your time, here is the short answer:
+
+It shows how calculus behaves, not just what the final formula is. It helps you connect theory to plots, code, and interpretation. It is organized like a learning journey, so each experiment adds something new. It is meant to be useful for students, lecturers, and anyone who wants the math to feel less abstract.
 
 ## Repository Layout
 
@@ -185,8 +202,7 @@ This project intentionally combines two complementary methods:
 
 This hybrid approach avoids two common traps:
 
-- **Pure symbolic work** that is hard to intuit.
-- **Pure numerical work** that is hard to justify mathematically.
+Pure symbolic work can be hard to intuit, while pure numerical work can be hard to justify mathematically.
 
 ---
 
@@ -194,11 +210,7 @@ This hybrid approach avoids two common traps:
 
 After running these experiments, I should be able to:
 
-1. Interpret $f'(x)$ and $f''(x)$ computationally and geometrically.
-2. Link critical points to actual curve behavior and decision implications.
-3. Compare optimization methods and explain trade-offs clearly.
-4. Discuss sensitivity and robustness in plain, practical language.
-5. Produce reports that are mathematically sound and readable.
+Interpret $f'(x)$ and $f''(x)$ computationally and geometrically, link critical points to actual curve behavior and decision implications, compare optimization methods clearly, discuss sensitivity and robustness in plain practical language, and produce reports that are mathematically sound and readable.
 
 ---
 
@@ -208,20 +220,13 @@ This project prioritizes **conceptual clarity first**, then engineering maturity
 
 Current limitations (explicitly documented so scope and confidence are clear):
 
-- Mostly 1D objective-function focus.
-- Some assumptions may not generalize to non-smooth functions.
-- Certain parameter choices are still manually tuned.
-- Reporting and test depth are improving, but not exhaustive yet.
+The current scope is mostly 1D objective-function analysis, some assumptions may not generalize to non-smooth functions, certain parameter choices are still manually tuned, and reporting plus test depth are improving but not exhaustive yet.
 
 ---
 
 ## Contributing
 
-Contributions are welcome if they improve:
-
-- Calculus interpretation and clarity
-- Mathematical or code correctness
-- Output explainability and reproducibility
+Contributions are welcome if they improve calculus interpretation and clarity, mathematical or code correctness, or output explainability and reproducibility.
 
 Please keep contributions **educational, practical, and technically grounded**.
 

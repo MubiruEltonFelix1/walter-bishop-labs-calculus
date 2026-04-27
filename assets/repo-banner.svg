@@ -1,0 +1,93 @@
+<svg width="1600" height="420" viewBox="0 0 1600 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Walter Bishop Labs Calculus Experiments banner</title>
+  <desc id="desc">A dark academic banner with gradient waves, plotted curves, and calculus themed typography.</desc>
+  <defs>
+    <linearGradient id="bg" x1="120" y1="24" x2="1520" y2="396" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#081120"/>
+      <stop offset="0.48" stop-color="#0B2A3A"/>
+      <stop offset="1" stop-color="#122B18"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="220" y1="90" x2="1380" y2="340" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7DD3FC"/>
+      <stop offset="0.5" stop-color="#34D399"/>
+      <stop offset="1" stop-color="#FBBF24"/>
+    </linearGradient>
+    <linearGradient id="accentSoft" x1="260" y1="100" x2="1240" y2="310" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7DD3FC" stop-opacity="0.22"/>
+      <stop offset="0.52" stop-color="#34D399" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#FBBF24" stop-opacity="0.15"/>
+    </linearGradient>
+    <filter id="blur" x="0" y="0" width="1600" height="420" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+    <filter id="shadow" x="0" y="0" width="1600" height="420" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M 64 0 H 0 V 64" stroke="#FFFFFF" stroke-opacity="0.05" stroke-width="1"/>
+      <circle cx="0" cy="0" r="1.4" fill="#FFFFFF" fill-opacity="0.08"/>
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="420" rx="36" fill="url(#bg)"/>
+  <rect width="1600" height="420" rx="36" fill="url(#grid)"/>
+
+  <circle cx="160" cy="90" r="94" fill="#7DD3FC" fill-opacity="0.11" filter="url(#blur)"/>
+  <circle cx="1460" cy="74" r="120" fill="#FBBF24" fill-opacity="0.10" filter="url(#blur)"/>
+  <circle cx="1340" cy="330" r="150" fill="#34D399" fill-opacity="0.10" filter="url(#blur)"/>
+
+  <g opacity="0.9" filter="url(#shadow)">
+    <path d="M124 285 C 222 234, 312 184, 408 196 C 512 210, 562 286, 662 272 C 748 260, 812 174, 916 160 C 1048 142, 1118 228, 1218 236 C 1320 244, 1412 180, 1494 138" stroke="url(#accent)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M124 285 C 222 234, 312 184, 408 196 C 512 210, 562 286, 662 272 C 748 260, 812 174, 916 160 C 1048 142, 1118 228, 1218 236 C 1320 244, 1412 180, 1494 138" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <path d="M148 334H1470" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="2"/>
+  <path d="M148 334V110" stroke="#FFFFFF" stroke-opacity="0.14" stroke-width="2"/>
+  <path d="M262 334V214" stroke="#FFFFFF" stroke-opacity="0.06" stroke-width="1"/>
+  <path d="M436 334V170" stroke="#FFFFFF" stroke-opacity="0.06" stroke-width="1"/>
+  <path d="M640 334V144" stroke="#FFFFFF" stroke-opacity="0.06" stroke-width="1"/>
+  <path d="M856 334V128" stroke="#FFFFFF" stroke-opacity="0.06" stroke-width="1"/>
+  <path d="M1088 334V158" stroke="#FFFFFF" stroke-opacity="0.06" stroke-width="1"/>
+  <path d="M1304 334V184" stroke="#FFFFFF" stroke-opacity="0.06" stroke-width="1"/>
+
+  <g transform="translate(116 98)">
+    <rect x="0" y="0" width="160" height="34" rx="17" fill="#FFFFFF" fill-opacity="0.08" stroke="#FFFFFF" stroke-opacity="0.14"/>
+    <circle cx="20" cy="17" r="6" fill="#7DD3FC"/>
+    <text x="38" y="22" fill="#EAF2FF" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif" font-size="14" font-weight="700" letter-spacing="2.2">CALCULUS LAB</text>
+
+    <text x="0" y="74" fill="#F8FAFC" font-family="Georgia, 'Times New Roman', serif" font-size="68" font-weight="700" letter-spacing="0.2">Walter Bishop Labs</text>
+    <text x="0" y="122" fill="#D7E7EE" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif" font-size="24" font-weight="500" letter-spacing="0.25">Calculus experiments with symbolic insight, numerical checks, and visual evidence.</text>
+  </g>
+
+  <g transform="translate(116 302)">
+    <rect x="0" y="0" width="132" height="36" rx="18" fill="#7DD3FC" fill-opacity="0.14" stroke="#7DD3FC" stroke-opacity="0.22"/>
+    <text x="18" y="23" fill="#E9FBFF" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif" font-size="16" font-weight="600">Symbolic</text>
+
+    <rect x="148" y="0" width="130" height="36" rx="18" fill="#34D399" fill-opacity="0.14" stroke="#34D399" stroke-opacity="0.22"/>
+    <text x="166" y="23" fill="#E9FFF5" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif" font-size="16" font-weight="600">Numerical</text>
+
+    <rect x="294" y="0" width="118" height="36" rx="18" fill="#FBBF24" fill-opacity="0.14" stroke="#FBBF24" stroke-opacity="0.22"/>
+    <text x="312" y="23" fill="#FFF8E9" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif" font-size="16" font-weight="600">Visual</text>
+  </g>
+
+  <g transform="translate(1036 82)">
+    <path d="M0 168 C 64 108, 108 58, 150 46 C 188 35, 232 56, 266 104 C 300 152, 338 182, 390 188" stroke="#F8FAFC" stroke-opacity="0.7" stroke-width="3" fill="none"/>
+    <path d="M0 168 C 64 108, 108 58, 150 46 C 188 35, 232 56, 266 104 C 300 152, 338 182, 390 188" stroke="url(#accentSoft)" stroke-width="18" fill="none" filter="url(#blur)"/>
+    <circle cx="150" cy="46" r="7" fill="#7DD3FC"/>
+    <circle cx="266" cy="104" r="7" fill="#34D399"/>
+    <circle cx="390" cy="188" r="7" fill="#FBBF24"/>
+    <circle cx="72" cy="206" r="5" fill="#7DD3FC" fill-opacity="0.7"/>
+    <circle cx="214" cy="20" r="5" fill="#34D399" fill-opacity="0.7"/>
+    <circle cx="322" cy="232" r="5" fill="#FBBF24" fill-opacity="0.7"/>
+    <path d="M0 216 H420" stroke="#FFFFFF" stroke-opacity="0.12" stroke-width="2"/>
+    <path d="M18 216 V0" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="2"/>
+    <path d="M0 188 H420" stroke="#FFFFFF" stroke-opacity="0.06" stroke-width="1"/>
+    <path d="M0 144 H420" stroke="#FFFFFF" stroke-opacity="0.06" stroke-width="1"/>
+    <path d="M0 100 H420" stroke="#FFFFFF" stroke-opacity="0.06" stroke-width="1"/>
+  </g>
+
+  <g opacity="0.45">
+    <path d="M1270 56 C 1310 82, 1370 90, 1440 84" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+    <path d="M1218 88 C 1278 120, 1350 126, 1462 118" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+  </g>
+</svg>
