@@ -8,7 +8,7 @@
 ![NumPy](https://img.shields.io/badge/NumPy-Numerical-013243?style=flat-square&logo=numpy&logoColor=white)
 ![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-11557C?style=flat-square)
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square)
-![Experiments](https://img.shields.io/badge/Experiments-5-orange?style=flat-square)
+![Experiments](https://img.shields.io/badge/Experiments-6-orange?style=flat-square)
 
 ---
 
@@ -100,6 +100,7 @@ In short: this repo treats calculus as a lab, not a checklist.
 | 03 | [Integral Calculus](experiments/experiment_03_integral_calculus) | Integration as a modern applied experiment for estimating totals from sampled or modelled rate signals |
 | 04 | [Fourier Series Reconstruction](experiments/experiment_04_fourier_series_reconstruction) | Reconstructs periodic signals using Fourier partial sums and tracks approximation quality |
 | 05 | [Series and Sequence Convergence Applications](experiments/experiment_05_series_sequence_convergence_applications) | Practical convergence/divergence analysis with recursive systems, partial sums, and animated behavior |
+| 06 | [Fourier Series Parameter Sensitivity](experiments/experiment_06_fourier_series_parameter_sensitivity) | Studies Fourier series coefficient scaling, amplitude changes, and harmonic-count sensitivity through graphs and animations |
 
 ---
 
@@ -117,7 +118,8 @@ In short: this repo treats calculus as a lab, not a checklist.
     ├── experiment_02_optimisation_and_sensitivity_analysis/
     ├── experiment_03_integral_calculus/
     ├── experiment_04_fourier_series_reconstruction/
-    └── experiment_05_series_sequence_convergence_applications/
+    ├── experiment_05_series_sequence_convergence_applications/
+    └── experiment_06_fourier_series_parameter_sensitivity/
 ```
 
 **Recommended read path:**
@@ -130,6 +132,7 @@ In short: this repo treats calculus as a lab, not a checklist.
 6. [Experiment 03 README](experiments/experiment_03_integral_calculus/README.md)
 7. [Experiment 04 README](experiments/experiment_04_fourier_series_reconstruction/README.md)
 8. [Experiment 05 README](experiments/experiment_05_series_sequence_convergence_applications/README.md)
+9. [Experiment 06 README](experiments/experiment_06_fourier_series_parameter_sensitivity/README.md)
 
 ---
 
@@ -154,10 +157,13 @@ python experiments/experiment_04_fourier_series_reconstruction/main.py
 # Run Experiment 05 (direct entry)
 python experiments/experiment_05_series_sequence_convergence_applications/main.py
 
+# Run Experiment 06 (direct entry)
+python experiments/experiment_06_fourier_series_parameter_sensitivity/main.py
+
 # Run both (01 and 02)
 python run_experiments.py --exp both
 
-# Run all experiments (01 to 05)
+# Run all experiments (01 to 06)
 python run_experiments.py --exp all
 
 # Run validation only (no plots)

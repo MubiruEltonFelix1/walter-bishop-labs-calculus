@@ -91,6 +91,32 @@ assert abs(alt_partial[-1] - 100.0 * np.log(2.0)) < 0.2
 print('pass')
 """,
     },
+    {
+        'name': 'Experiment 06 core checks',
+        'cwd': ROOT / 'experiments' / 'experiment_06_fourier_series_parameter_sensitivity',
+        'code': """
+import numpy as np
+from calculus import FourierSensitivityEngine
+
+engine = FourierSensitivityEngine()
+
+base = engine.compute_coefficients('square', n_terms=15, n_samples=12000, amplitude=1.0)
+scaled = engine.compute_coefficients('square', n_terms=15, n_samples=12000, amplitude=1.75)
+
+assert abs(base['a0']) < 0.05
+assert abs(scaled['a0']) < 0.1
+assert np.allclose(scaled['an'][:8], 1.75 * base['an'][:8], atol=0.08)
+assert np.allclose(scaled['bn'][:8], 1.75 * base['bn'][:8], atol=0.08)
+
+x = np.linspace(-np.pi, np.pi, 2000, endpoint=False)
+y_true = engine.evaluate(x, 'square', amplitude=1.75)
+y_hat = engine.reconstruct(x, scaled['a0'], scaled['an'][:10], scaled['bn'][:10])
+metrics = engine.reconstruction_metrics(y_true, y_hat)
+assert metrics['mse'] > 0.0
+
+print('pass')
+""",
+    },
 ]
 
 

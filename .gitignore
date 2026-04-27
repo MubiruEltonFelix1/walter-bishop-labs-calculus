@@ -32,3 +32,6 @@ experiments/**/outputs/plots/*.gif
 !experiments/**/outputs/plots/*screenshot*.png
 !experiments/**/outputs/plots/*screenshot*.jpg
 !experiments/**/outputs/plots/*screenshot*.jpeg
+
+#DOCS
+docs

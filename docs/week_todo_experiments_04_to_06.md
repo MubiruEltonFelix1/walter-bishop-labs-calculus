@@ -6,7 +6,7 @@ Date: 2026-03-30
 Implement a connected sequence of Fourier-focused experiments:
 1. Experiment 04: Fourier series reconstruction of basic periodic functions.
 2. Experiment 05: Fourier-based filtering and denoising.
-3. Experiment 06: Fourier coefficient compression and quality trade-offs.
+3. Experiment 06: Fourier series parameter sensitivity and amplitude scaling.
 
 ## Day-by-Day Task Flow
 
@@ -54,20 +54,20 @@ Tasks:
 Deliverable:
 - Experiment 05 complete and documented.
 
-## Day 5: Scaffold Experiment 06 (Compression)
+## Day 5: Scaffold Experiment 06 (Parameter Sensitivity)
 Tasks:
-1. Implement coefficient ranking by energy contribution.
-2. Implement top-K reconstruction workflow.
-3. Compute compression ratio and fidelity metrics.
+1. Implement amplitude-scaling coefficient studies.
+2. Implement reconstruction comparisons across multiple harmonic counts.
+3. Compute error scaling and coefficient scaling metrics.
 
 Deliverable:
 - Experiment 06 core engine complete.
 
 ## Day 6: Visual and Analysis Layer for Experiment 06
 Tasks:
-1. Build quality-vs-compression curves.
-2. Add reconstruction snapshots at multiple K values.
-3. Write interpretation notes around decision thresholds for acceptable quality.
+1. Build amplitude-family graphs and harmonic-spectrum plots.
+2. Add animations for amplitude sweeps and harmonic build-up.
+3. Write interpretation notes around amplitude scaling and harmonic sensitivity.
 
 Deliverable:
 - Experiment 06 complete and interpreted.
