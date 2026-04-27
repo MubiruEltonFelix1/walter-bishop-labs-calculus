@@ -2,260 +2,133 @@
 
 Thank you for contributing to Walter Bishop Labs: Calculus Experiments.
 
-This repository is intentionally focused on two experiments:
+This project is a calculus lab built around six experiments, with the strongest focus on correctness, clarity, reproducibility, and interpretation. If you are changing code or documentation, the goal is to keep the math trustworthy and the explanations easy to follow.
 
-1. Experiment 01: Function behavior analysis
-2. Experiment 02: Optimisation and sensitivity analysis
+## What I’m Looking For
 
-The current priority is to improve correctness, clarity, reproducibility, and reporting quality inside this existing scope.
+High-value contributions usually fall into one of these areas:
 
-## 1. What Contributions Are Welcome
+- Math correctness fixes in symbolic analysis, integration, optimization, or Fourier logic
+- Better error handling, validation, and failure messages
+- Test hardening and regression coverage
+- Plot or animation improvements that make behavior easier to read
+- Clearer educational documentation and explanations
+- Reproducibility improvements, especially around settings and deterministic output
 
-High-value contributions include:
+## What Is Out of Scope
 
-1. Math correctness fixes in symbolic analysis and optimization logic
-2. Better error handling and input validation
-3. Test hardening and better failure messages
-4. Plot readability improvements that increase interpretability
-5. Clearer educational documentation and explanations
-6. Reproducibility and deterministic behavior improvements
+Please avoid PRs that introduce unrelated framework migrations, rename stable runtime packages that other modules already import, or add large generated artifacts unless they are specifically needed as teaching evidence.
 
-## 2. What Is Out of Scope (For This Branch)
+New experiment families are also out of scope unless we agree on that direction first. Small extensions within the existing six experiments are fine when they fit the current structure.
 
-Please avoid opening PRs that:
+## Before You Edit
 
-1. Add Experiment 03 or new experiment families
-2. Rename stable runtime packages that are already imported (for example, `optimization/`)
-3. Introduce unrelated framework migrations
-4. Add large generated artifacts unless explicitly needed as teaching evidence
+A good starting path is:
 
-## 3. Repository Orientation
+1. Read [README.md](README.md)
+2. Check [experiment_structure.md](experiment_structure.md)
+3. Review [docs/documentation_standards.md](docs/documentation_standards.md)
+4. Open the experiment-level README for the area you are changing
+5. Skim any related test files before making behavior changes
 
-Recommended reading order before making changes:
+The main areas of the repo are:
 
-1. `README.md`
-2. `experiment_structure.md`
-3. `BRIDGE_EXPERIMENTS_01_TO_02.md`
-4. `docs/documentation_standards.md`
-5. Experiment-level README for the area you are changing
+- [experiments/experiment_01_function_behavior_analysis/](experiments/experiment_01_function_behavior_analysis/)
+- [experiments/experiment_02_optimisation_and_sensitivity_analysis/](experiments/experiment_02_optimisation_and_sensitivity_analysis/)
+- [experiments/experiment_03_integral_calculus/](experiments/experiment_03_integral_calculus/)
+- [experiments/experiment_04_fourier_series_reconstruction/](experiments/experiment_04_fourier_series_reconstruction/)
+- [experiments/experiment_05_series_sequence_convergence_applications/](experiments/experiment_05_series_sequence_convergence_applications/)
+- [experiments/experiment_06_fourier_series_parameter_sensitivity/](experiments/experiment_06_fourier_series_parameter_sensitivity/)
+- [tests/](tests/)
+- [docs/](docs/)
 
-Key folders:
+## Development Setup
 
-1. `experiments/experiment_01_function_behavior_analysis/`
-2. `experiments/experiment_02_optimisation_and_sensitivity_analysis/`
-3. `tests/`
-4. `docs/`
+Use Python 3.10+ if possible. If you want to render plots interactively, a local desktop environment is the easiest setup.
 
-## 4. Development Setup
-
-### Prerequisites
-
-1. Python 3.10+ recommended
-2. pip
-3. A local desktop environment if you want to render plots interactively
-
-### Install dependencies
-
-From repository root:
+Install dependencies from the repository root:
 
 ```bash
 python -m pip install -r requirements.txt
 ```
 
-## 5. Running the Project
+## Running And Validating
 
-Use root commands when possible.
+Use repository-root commands when possible.
 
-Run Experiment 01:
+Run an experiment bundle via the root script:
 
 ```bash
+# Run Experiment 01
 python run_experiments.py --exp 1
-```
 
-Run Experiment 02:
-
-```bash
+# Run Experiment 02
 python run_experiments.py --exp 2
-```
 
-Run both:
-
-```bash
+# Run both (01 and 02)
 python run_experiments.py --exp both
-```
 
-Run core validation only (non-plot checks):
+# Run all experiments (01 to 06)
+python run_experiments.py --exp all
 
-```bash
+# Run validation only (no plots)
 python run_experiments.py --validate
 ```
 
-If you run an experiment directly, run it from inside that experiment directory so local imports resolve as expected.
+Run any experiment via direct entry from its own folder:
 
-## 6. Testing and Validation Expectations
+```bash
+python experiments/experiment_03_integral_calculus/main.py
+python experiments/experiment_04_fourier_series_reconstruction/main.py
+python experiments/experiment_05_series_sequence_convergence_applications/main.py
+python experiments/experiment_06_fourier_series_parameter_sensitivity/main.py
+```
 
-Before opening a pull request, run both validation and tests.
-
-Validation:
+Before opening a PR, run the validation script and smoke tests:
 
 ```bash
 python validate_experiments.py
-```
-
-Pytest smoke tests:
-
-```bash
 pytest -q
 ```
 
-A contribution is considered review-ready when:
+## Coding And Design Conventions
 
-1. Validation passes
-2. Smoke tests pass
-3. Changed behavior is covered by at least one relevant test update
-4. Any intentional behavior change is documented
+Keep Python code small, readable, and focused. Prefer clear names over clever ones, avoid hidden side effects, and respect the existing folder responsibilities: calculus logic in `calculus/`, optimization in `optimization/`, analysis in `analysis/`, visualization in `visualization/`, and reporting in `reporting/`.
 
-## 7. Coding and Design Conventions
+For reproducibility, respect each experiment’s settings file, avoid unseeded randomness, and keep dependency versions stable unless there is a clear reason to change them. Generated outputs belong under `outputs/plots/` and `outputs/reports/`; do not commit them by default.
 
-### General Python style
+## Documentation Expectations
 
-1. Follow PEP 8 and keep functions focused
-2. Prefer clear names over short names
-3. Keep module responsibilities narrow
-4. Avoid introducing hidden side effects
+Documentation is part of the deliverable. If behavior changes, update the relevant docs in the same PR.
 
-### Existing architecture expectations
+At minimum, review and update the experiment-level `README.md`, `understanding.md` when interpretation changes, and `docs/documentation_standards.md` if the documentation pattern itself changes.
 
-1. Keep calculus logic in `calculus/`
-2. Keep optimization methods in `optimization/`
-3. Keep sensitivity and robustness logic in `analysis/`
-4. Keep rendering logic in `visualization/`
-5. Keep reporting logic in `reporting/`
+Each experiment README should still answer five things quickly: what the experiment does, how to run it, how to verify it, what output to expect, and what to do when something fails.
 
-### Determinism and reproducibility
+Use the narrative term “optimisation” in documentation text, but keep runtime package names unchanged when other imports depend on them.
 
-1. Respect experiment settings files and default run seed values
-2. Do not introduce randomness without controlled seed handling
-3. Keep dependency versions pinned unless there is a clear reason to update
+## Branches, Commits, And PRs
 
-### Output artifact policy
+Use descriptive branch names like `fix/exp04-harmonic-plot-labels`, `docs/readme-clarity-update`, or `test/exp01-regression-case`.
 
-1. Generated outputs belong under `outputs/plots/` and `outputs/reports/`
-2. Do not commit generated outputs by default
-3. Commit generated outputs only when explicitly required for teaching evidence
+Keep commits focused and imperative, for example: `Fix constrained optimizer boundary selection` or `Add smoke test for symbolic candidate filtering`.
 
-## 8. Documentation Conventions
+Before requesting review, confirm that the change stayed focused, validation and tests pass, behavior changes are covered by a relevant test update, docs were updated where needed, and no unnecessary generated artifacts were added.
 
-Documentation is part of the deliverable.
+A strong PR description should include a short summary, the scope, validation run, behavior changes, documentation updates, and any follow-up risks.
 
-If behavior changes, update docs in the same PR.
+## Review Priorities
 
-At minimum, review and update relevant sections of:
+Reviewers should prioritize mathematical correctness first, then reproducibility, then interpretability of outputs, and finally visual polish. Clear educational value and traceability from math to result matter more than cosmetic changes.
 
-1. Experiment-level `README.md`
-2. Experiment-level `understanding.md` when interpretation changes
-3. `docs/documentation_standards.md` if standards evolve
+## Reporting Issues
 
-Each experiment README should continue to include:
+When opening an issue, include a short summary, steps to reproduce, expected result, actual result, relevant environment details, and a minimal code snippet or traceback if available. For optimization or sensitivity issues, include bounds, direction, and perturbation settings.
 
-1. Objective and scope
-2. Run instructions
-3. Quick verification checks
-4. Expected output snapshot
-5. Troubleshooting notes
+## Safety Notes
 
-Terminology note:
+Do not commit secrets or machine-specific credentials. Keep paths and examples portable. Prefer repository-root commands in docs to reduce environment-specific failures.
 
-1. Prefer the narrative term "optimisation" in documentation text
-2. Keep runtime package names unchanged when tied to imports
+## Thank You
 
-## 9. Branch and Commit Guidance
-
-### Branch naming
-
-Use descriptive branch names such as:
-
-1. `fix/exp02-constrained-boundary-case`
-2. `docs/readme-verification-clarity`
-3. `test/exp01-critical-point-regression`
-
-### Commit message style
-
-Use focused commits with imperative messages, for example:
-
-1. `Fix constrained optimizer boundary selection`
-2. `Add smoke test for symbolic candidate filtering`
-3. `Clarify experiment 02 troubleshooting notes`
-
-## 10. Pull Request Checklist
-
-Before requesting review, confirm all items:
-
-1. I stayed within the two-experiment scope
-2. I ran validation and pytest locally
-3. I updated or added tests for behavior changes
-4. I updated relevant documentation in the same PR
-5. I did not commit unnecessary generated artifacts
-6. I preserved naming and folder conventions
-7. I kept changes focused and minimal
-
-## 11. PR Description Template
-
-Use this structure in your PR body:
-
-```md
-## Summary
-- What changed
-- Why it changed
-
-## Scope
-- Experiment(s) affected
-- Modules affected
-
-## Validation
-- Commands run
-- Key outputs or pass/fail summary
-
-## Behavior Changes
-- User-visible or result-visible changes
-
-## Documentation
-- Files updated
-
-## Risks / Follow-ups
-- Known limitations or next improvements
-```
-
-## 12. Review Priorities
-
-Reviewers should prioritize:
-
-1. Mathematical correctness over style preferences
-2. Reproducibility over convenience shortcuts
-3. Interpretability of outputs over visual polish alone
-4. Clear educational value and traceability from math to result
-
-## 13. Reporting Bugs or Proposing Improvements
-
-When opening an issue, include:
-
-1. A short problem summary
-2. Steps to reproduce
-3. Expected result
-4. Actual result
-5. Relevant environment details
-6. Minimal code snippet or traceback if available
-
-For optimization or sensitivity issues, include bounds, direction, and perturbation settings used.
-
-## 14. Security and Safety Notes
-
-1. Do not commit secrets or machine-specific credentials
-2. Keep paths and examples portable
-3. Prefer repository-root commands in docs to reduce environment-specific failures
-
-## 15. Thank You
-
-Contributions that improve conceptual clarity and mathematical reliability are especially valuable in this project.
-
-If you are unsure whether a change fits scope, open an issue first and describe the intended outcome before implementing.
+Contributions that improve conceptual clarity and mathematical reliability are especially valuable here.
